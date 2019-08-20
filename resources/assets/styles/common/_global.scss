@@ -1,0 +1,62 @@
+html,
+body {
+  font-family: map-get($font-family, "main"), sans-serif;
+  overflow-x: initial;
+  margin: 0 !important;
+  padding: 0;
+  overflow: hidden;
+}
+
+#wpadminbar {
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.gmp_map_opts,
+.gmpMapDetailsContainer,
+.gmp_MapPreview {
+  height: 100% !important;
+  min-height: 300px;
+}
+
+xmp {
+  padding: 15px;
+  background: #001d2b;
+  border-radius: 16px;
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.main {
+  display: block;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: rgba(color(greyy), 0.05);
+}
+
+.woocommerce-message {
+  display: none !important;
+
+  &:nth-last-child(1) {
+    display: block !important;
+  }
+}

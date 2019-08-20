@@ -1,0 +1,47 @@
+%text {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.headline {
+  @include cssLock("font-size", 360, 1920, (22, 76));
+
+  letter-spacing: 4px;
+
+  @extend %text;
+}
+
+.title {
+  @include cssLock("font-size", 360, 1920, (18, 36));
+
+  @extend %text;
+}
+
+.subtitle {
+  @include cssLock("font-size", 360, 1920, (14, 24));
+
+  @extend %text;
+}
+
+.text {
+  @include cssLock("font-size", 360, 1920, (12, 16));
+
+  @extend %text;
+
+  &--small {
+    @include cssLock("font-size", 360, 1920, (10, 14));
+  }
+
+  &--special {
+    color: color("special");
+  }
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.light {
+  font-weight: 300;
+}

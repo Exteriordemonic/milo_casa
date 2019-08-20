@@ -1,0 +1,77 @@
+.woocommerce-checkout {
+  opacity: 1;
+
+  .input-text {
+    @extend .text;
+
+    @include cssLock("padding", 360, 1920, (6, 12));
+
+    border: 0;
+    border-bottom: 1px solid color("greyy");
+    background: transparent;
+    padding-left: 0;
+  }
+
+  select {
+    @extend .text;
+
+    @include cssLock("padding", 360, 1920, (6, 12));
+
+    margin-bottom: $gutter !important;
+  }
+
+  .wc_payment_methods {
+    label {
+      display: flex;
+    }
+
+    img {
+      width: auto;
+    }
+  }
+
+  .place-order {
+    a {
+      color: color("special");
+    }
+
+    button {
+      @extend .subtitle;
+      @extend .bold;
+
+      @include cssLock("padding", 360, 1920, (12, 24));
+
+      background: transparent !important;
+      color: color("special") !important;
+      text-align: left;
+      display: inline-block;
+      border: 0 !important;
+      padding-left: 0 !important;
+      float: left !important;
+      cursor: pointer;
+
+      &:hover {
+        color: color("special") !important;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.woocommerce ul.order_details {
+  padding-left: 0 !important;
+
+  li {
+    margin-bottom: 0.3rem;
+  }
+}
+
+address {
+  border: 0 !important;
+  padding: 0 !important;
+
+  p {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
