@@ -38,6 +38,7 @@
 
       display: inline-block;
       position: relative;
+      padding: ($gutter * 0.1) 0;
     }
 
     &.current-menu-item {

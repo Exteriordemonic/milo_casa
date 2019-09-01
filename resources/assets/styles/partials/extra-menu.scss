@@ -1,0 +1,49 @@
+.extra-menu {
+  @include cssLock("margin-top", 360, 1920, ($gutter_num * 12, $gutter_num * 30));
+  @include cssLock("margin-bottom", 360, 1920, ($gutter_num * 3, $gutter_num * 10));
+
+  &__nav {
+    margin: 0 auto;
+  }
+
+  &__menu {
+    @include cssLock("margin", 360, 1920, (-$gutter_num * 0.75, -$gutter_num * 1.5));
+
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  li {
+    @include cssLock("padding", 360, 1920, ($gutter_num * 0.75, $gutter_num * 1.5));
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    a {
+      @extend .link;
+
+      display: inline-block;
+      position: relative;
+    }
+
+    &.current-menu-item {
+      a {
+        &::after {
+          content: "";
+
+          @extend %absolute;
+
+          width: 100%;
+          height: $gutter * 0.05;
+          top: unset;
+          background: color(dark);
+        }
+      }
+    }
+  }
+}
