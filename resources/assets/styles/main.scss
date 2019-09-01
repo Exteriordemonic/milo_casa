@@ -6,6 +6,7 @@
 @import "common/variables";
 @import "common/mixins";
 @import "common/functions";
+@import "common/animations";
 @import "common/extends";
 
 /** Import everything from autoload */
@@ -21,12 +22,26 @@
 
 /** Import theme styles */
 @import "common/global";
+@import "common/font";
 
 /** Components */
 @import "components/text";
+@import "components/container";
+@import "components/hamburger";
+@import "components/social-icons";
+@import "components/additional-links";
+@import "components/section";
+@import "components/button";
 
 /** Blocks */
 
-/** Layouts */
+/** Partials */
+@import "partials/header";
+@import "partials/hero";
+@import "partials/sidebar";
+@import "partials/description";
+@import "partials/instagram";
+@import "partials/contact";
+@import "partials/footer";
 
 /** Pages */

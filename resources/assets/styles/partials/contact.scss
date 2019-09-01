@@ -1,0 +1,77 @@
+.contact {
+  @include cssLock(
+    "padding-top",
+    360,
+    1920,
+    ($gutter_num * 6, $gutter_num * 18)
+  );
+  @include cssLock(
+    "padding-bottom",
+    360,
+    1920,
+    ($gutter_num * 6, $gutter_num * 24)
+  );
+  @include cssLock(
+    "padding-right",
+    360,
+    1920,
+    (0, $gutter_num * 25)
+  );
+  @include cssLock(
+    "padding-left",
+    360,
+    1920,
+    (0, $gutter_num * 25)
+  );
+
+  position: relative;
+  color: color(dark);
+
+  &__bg {
+    @extend %absolute;
+    @extend %image;
+
+    opacity: 0.2;
+  }
+
+  &__title {
+    @extend .headline;
+
+    color: color(greyy-light);
+    margin-bottom: $gutter * 4;
+    max-width: $gutter * 60;
+
+    @include media(xs) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    @include media(xs) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__address-wrapper {
+    font-style: normal;
+    margin-bottom: $gutter * 4;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h5 {
+      @extend .title;
+
+      font-weight: bold;
+      margin-bottom: $gutter;
+    }
+
+    p {
+      @extend .minor-text;
+    }
+  }
+}

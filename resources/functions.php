@@ -259,6 +259,9 @@ function woocommerce_cart_item_thumbnail() {
    echo 'hello';
 }
 
+function option($field) {
+    return get_field($field, 'options');
+};
 
 add_action( 'wp_enqueue_scripts', 'wsis_dequeue_stylesandscripts_select2', 100 );
 

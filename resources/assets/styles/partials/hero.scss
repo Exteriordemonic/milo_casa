@@ -1,0 +1,16 @@
+.hero {
+  max-width: 100%;
+  height: 100vh;
+
+  &__img {
+    @extend %image;
+    @extend %absolute;
+  }
+
+  &__sygnet {
+    @extend %absolute;
+
+    width: $gutter * 21;
+    height: auto;
+  }
+}

@@ -1,20 +1,18 @@
 @php
-  $phone = get_field('phone','options');
-  $mail = get_field('mail','options');
-
-  $sm = get_field('icons');
+  $logo = option('logo')['id'];
 @endphp
 
 <header class="header" header>
-  <div class="header__wrapper">
-    <div class="header__left">
-      <a class="header__brand" href="{{ home_url('/') }}">
-        <img src="@asset('/images/logo.png')" alt="Brusso">
-      </a>
-      <button class="hamburger" data-toggle-menu></button>
-    </div> 
-    <nav class="header__nav">
-      @include('blocks.icon-nav')
-    </nav>
-  </div>
+  <nav class="header__wrapper container">
+    <div class="header__cell">
+      @include('components.hamburger')
+      @include('components.social-icons', ['class'=>'header__social-media'])
+    </div>
+    <a href="/" class="header__brand-wrapper">
+      {!! image($logo, 'full', 'header__brand') !!}
+    </a>
+    <div class="header__cell header__cell--right">
+      @include('components.additional-links', ['class'=>'header__additional-links'])
+    </div>
+  </nav>
 </header>

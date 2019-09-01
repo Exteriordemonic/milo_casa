@@ -5,7 +5,9 @@ $theme-colors: (
   light: #fff,
   dark: #000,
   greyy: #707070,
-  special: #fec400
+  greyy-light: #9d9b9b,
+  special: #e3cfc4,
+  special-dark:  #30373d
 );
 
 $media: (
@@ -19,8 +21,9 @@ $media: (
 $transition: 0.4s;
 
 $font-family: (
-  main: "Open Sans",
-  title: "Open Sans"
+  main: "Avenir",
+  special: "Big Caslon",
+  special-win: "EB Garamond",
 );
 
 $gutter: 10px;

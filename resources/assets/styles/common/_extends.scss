@@ -30,3 +30,67 @@
   margin: 0;
   padding: 0;
 }
+
+%double-border {
+  border-color: transparent;
+  position: relative;
+
+  &::before {
+    @extend %absolute;
+
+    content: "";
+    border: ($gutter * 0.1) solid color(dark);
+    transform: translate($gutter * 1.5, $gutter * 1.5);
+    pointer-events: none;
+    display: none;
+    z-index: -1;
+  }
+
+  &__decorate {
+    &::after {
+      @extend %absolute;
+
+      content: url(../../images/special.png);
+      top: unset;
+      bottom: -$gutter * 3.5;
+      left: -$gutter * 4;
+      z-index: -1;
+      display: none;
+    }
+  }
+
+  @include media(xs) {
+    border: ($gutter * 0.1) solid color(dark);
+
+    &::before {
+      display: initial;
+    }
+
+    &::after {
+      display: initial;
+    }
+  }
+}
+
+%arrow-bottom {
+  position: relative;
+
+  &::after {
+    @extend %absolute;
+
+    content: url(../../images/down-arrow.svg);
+    top: unset;
+    bottom: -$gutter * 3;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::after {
+      @extend .bounce;
+    }
+  }
+}
+
+%mainFont {
+  font-family: map-get($font-family, "main"), map-get($font-family, "special-win"), sans-serif;
+}

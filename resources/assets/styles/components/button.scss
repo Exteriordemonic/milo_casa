@@ -1,0 +1,19 @@
+.button {
+  @extend .minor-text;
+
+  font-weight: 600;
+  padding: ($gutter * 1.5);
+  background-color: rgba(color("special"), 0.36);
+  transition: $transition;
+  width: 100%;
+  text-align: center;
+  box-shadow: ($gutter * 1) ($gutter * 1) ($gutter * 0.5) rgba(color("dark"), 0.02);
+
+  @include media(xs) {
+    width: auto;
+  }
+
+  &:hover {
+    background-color: rgba(color("special"), 0.8);
+  }
+}

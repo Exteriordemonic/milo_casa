@@ -1,0 +1,21 @@
+.footer {
+  padding: ($gutter * 4) 0;
+  background-color: #30373d;
+  background-image: linear-gradient(to top, rgba(9, 9, 9, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  color: color(light);
+
+  &__brand-wrapper {
+    max-width: $gutter * 10;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    @extend .link;
+  }
+}

@@ -13,5 +13,10 @@ $page
         ->and('page_template', '!=', 'views/page-insipration.blade.php');
 
 $page
-    ->addFields(get_field_partial('partials.builder'));
+    ->addTab('Hero', ['placement' => 'left'])
+        ->addFields(get_field_partial('components.hero'))
+    ->addTab('Description', ['placement' => 'left'])
+        ->addFields(get_field_partial('components.description'))
+    ->addTab('Instagram', ['placement' => 'left'])
+        ->addFields(get_field_partial('components.instagram'));
 return $page;

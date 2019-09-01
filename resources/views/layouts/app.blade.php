@@ -4,14 +4,20 @@
   <body @php body_class() @endphp style="overflow-x: hidden">
     @php do_action('get_header') @endphp
 
+    @include('partials.header')
+    @include('partials.sidebar')
+
     <div class="wrap" role="document">
       <div class="content">
-        <main class="main" data-main>
+        <main id="main" class="main" data-main>
           @yield('content')
         </main>
       </div>
     </div>
     @php do_action('get_footer') @endphp
+
+    @include('partials.contact')
+    @include('partials.footer')
 
     @php wp_footer() @endphp
   </body>

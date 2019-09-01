@@ -1,0 +1,32 @@
+.instagram {
+  &__link {
+    @extend .text;
+    @extend %arrow-bottom;
+
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    @include cssLock(
+      "padding-top",
+      360,
+      1920,
+      ($gutter_num * 3, $gutter_num * 10)
+    );
+
+    margin-top: $gutter * 4;
+    background-color: color(special-dark);
+  }
+
+  &__img-wrapper {
+    margin: 0 auto;
+    max-width: auto;
+  }
+
+  &__img {
+    @extend %image;
+  }
+}

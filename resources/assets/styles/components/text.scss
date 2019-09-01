@@ -1,19 +1,23 @@
 %text {
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 600;
+  font-family: map-get($font-family, "special"), map-get($font-family, "special-win"), sans-serif;
 }
 
 .headline {
-  @include cssLock("font-size", 360, 1920, (22, 76));
-
-  letter-spacing: 4px;
-
   @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (24, 72));
+
+  font-family: map-get($font-family, "main"), map-get($font-family, "special-win"), sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: $gutter * 0.36;
 }
 
 .title {
-  @include cssLock("font-size", 360, 1920, (18, 36));
+  @include cssLock("font-size", 360, 1920, (18, 24));
 
   @extend %text;
 }
@@ -28,14 +32,18 @@
   @include cssLock("font-size", 360, 1920, (12, 16));
 
   @extend %text;
+}
 
-  &--small {
-    @include cssLock("font-size", 360, 1920, (10, 14));
-  }
+.major-text {
+  @extend %text;
 
-  &--special {
-    color: color("special");
-  }
+  @include cssLock("font-size", 360, 1920, (12, 18));
+}
+
+.minor-text {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (12, 16));
 }
 
 .bold {
@@ -44,4 +52,16 @@
 
 .light {
   font-weight: 300;
+}
+
+.link {
+  @include cssLock("font-size", 360, 1920, (16, 16));
+
+  font-family: map-get($font-family, "special"), map-get($font-family, "special-win"), sans-serif;
+  letter-spacing: $gutter *0.1;
+  transition: $transition;
+
+  &:hover {
+    opacity: 0.4;
+  }
 }
