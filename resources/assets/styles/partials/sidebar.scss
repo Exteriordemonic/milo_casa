@@ -39,6 +39,7 @@
       display: inline-block;
       position: relative;
       padding: ($gutter * 0.1) 0;
+      overflow: visible;
     }
 
     &.current-menu-item {
@@ -51,6 +52,7 @@
           width: 100%;
           height: $gutter * 0.05;
           top: unset;
+          bottom: $gutter * 0.1;
           background: color(light);
         }
       }

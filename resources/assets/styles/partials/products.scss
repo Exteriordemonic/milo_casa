@@ -1,0 +1,17 @@
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: $gutter * 3;
+  width: 100%;
+  margin-bottom: $gutter * 10 !important;
+
+  &::before,
+  &::after {
+    display: none !important;
+  }
+
+  @include media(xs) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
