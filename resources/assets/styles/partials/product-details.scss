@@ -1,0 +1,9 @@
+.product-details {
+  padding: $gutter * 10 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+  }
+}

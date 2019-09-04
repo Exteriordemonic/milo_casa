@@ -16,6 +16,7 @@ import aboutUs from './routes/about';
 //Components
 import hamburger from './components/hamburger';
 import smoothScroll from './components/smooth-scroll';
+import slider from './components/slider';
 
 
 /** Populate Router instance with DOM routes */
@@ -33,4 +34,5 @@ jQuery(document).ready(() => {
   routes.loadEvents();
   hamburger.init();
   smoothScroll.init();
+  slider.init();
 });
