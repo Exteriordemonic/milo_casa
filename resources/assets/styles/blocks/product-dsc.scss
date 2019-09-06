@@ -1,0 +1,24 @@
+.product-dsc {
+  padding: ($gutter * 6) ($gutter * 2);
+
+  &__title {
+    @extend .title;
+
+    font-weight: 500;
+    margin-bottom: $gutter * 0.5;
+  }
+
+  &__price {
+    @extend .title;
+
+    font-weight: 500;
+    margin-bottom: $gutter * 2;
+  }
+
+  &__add {
+    @extend .button;
+    @extend .button--special-light;
+
+    margin-bottom: $gutter * 5;
+  }
+}

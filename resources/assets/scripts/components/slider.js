@@ -1,30 +1,46 @@
-var Flickity = require('flickity');
+var Flickity = require('flickity-as-nav-for');
 
 const CONFIG = {
-    ELEM : '.slider__wrapper',
+  ELEM: '.flickity-main-slider',
+  NAV: '.flickity-slider-nav',
 };
 
 const Slider = {
-    init() {
-        const { ELEM } = CONFIG;
-        this.elem = document.querySelector(ELEM);
-        if(this.elem) {
-            this.slider =  new Flickity( ELEM, {
-                pageDots: false,
-                prevNextButtons: false,
-            });
+  init() {
+    const { ELEM, NAV } = CONFIG;
+    this.elem = document.querySelector(ELEM);
+    this.nav = document.querySelector(NAV);
 
-            this.slider.resize();
-        }
-    },
+    if (this.elem) {
+      this.slider = new Flickity(ELEM, {
+        pageDots: false,
+        prevNextButtons: false,
+        contain: true,
+        cellSelector: '.slider__cell',
+        wrapAround: true,
+      });
 
-    resize() {
-        if(this.elem) {
-          console.log('resize');
+      this.nav = new Flickity(NAV, {
+        cellSelector: '.slider__cell',
+        asNavFor: document.querySelector(ELEM),
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+      });
 
-            this.slider.resize();
-        }
-    },
+      this.slider.resize();
+      this.nav.resize();
+    }
+  },
+
+  resize() {
+    if (this.elem) {
+      console.log('resize');
+
+      this.slider.resize();
+      this.nav.resize();
+    }
+  },
 };
 
 export default Slider;

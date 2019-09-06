@@ -342,3 +342,4 @@ function custom_post_type() {
 
 
     add_image_size( 'color', 40, 40, true );
+    add_image_size( 'slider_thumbnail', 125, 0, true );

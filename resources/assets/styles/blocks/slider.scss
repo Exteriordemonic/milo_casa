@@ -1,26 +1,66 @@
 /* external css: flickity.css */
 
 .slider {
-  &__wrapper {
-    background: #fafafa;
-    margin-bottom: 40px;
+  $root: &;
+
+  border: ($gutter * 0.1) solid black;
+  padding: ($gutter * 2) ($gutter * 2) 0;
+  margin-left: $gutter * 4;
+  position: relative;
+
+  &::after {
+    @extend %absolute;
+
+    content: url(../images/product-decoration.png);
+    bottom: unset;
+    left: unset;
+    transform: translate(60%, -15%);
+    z-index: -1;
   }
 
   &__cell {
+    opacity: 1;
     width: 100%;
-    height: 200px;
-    margin-right: 10px;
-    background: #8c8;
-    border-radius: 5px;
-    counter-increment: carousel-cell;
+    margin: ($gutter * 3);
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__wrapper {
+    width: 100%;
+    padding: ($gutter * 6) 0;
 
     &::before {
-      display: block;
-      text-align: center;
-      content: counter(carousel-cell);
-      line-height: 200px;
-      font-size: 80px;
-      color: white;
+      @extend %absolute;
+
+      content: "";
+      width: calc(100% + #{$gutter * 9});
+      height: calc(100% - #{$gutter * 2});
+      top: unset;
+      border: ($gutter * 0.1) solid black;
+      transform: translate(-$gutter * 6, -$gutter * 2);
+      z-index: -1;
+    }
+
+    &--nav {
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+
+      #{$root}__cell {
+        width: $gutter * 12.5;
+        margin: ($gutter * 3);
+      }
+
+      #{$root}__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
 }
