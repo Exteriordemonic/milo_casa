@@ -2,7 +2,8 @@
   $title = option('wishlsit_title') ? option('wishlsit_title') : 'Wishlist';
   $empty = option('wishlsit_empty') ? option('wishlsit_empty') : 'Your wishlist is empty';
   $login = option('wishlsit_login') ? option('wishlsit_login') : 'You need to login to start create your Wishlist';
-  $wishlistProducts = '';
+  $userID = get_current_user_id();
+  $wishlistProducts = get_field('product-list', 'user_' . $userID);
   if ($wishlistProducts != '') {
     $wishlistArray = explode(",",$wishlistProducts);
   }
