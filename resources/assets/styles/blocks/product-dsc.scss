@@ -1,5 +1,11 @@
 .product-dsc {
-  padding: ($gutter * 6) ($gutter * 2);
+  padding: ($gutter * 6) 0;
+  position: relative;
+  z-index: 10;
+
+  @include media(md) {
+    padding: ($gutter * 6) ($gutter * 2);
+  }
 
   &__title {
     @extend .title;

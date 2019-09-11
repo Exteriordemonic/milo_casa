@@ -3,19 +3,34 @@
 .slider {
   $root: &;
 
-  border: ($gutter * 0.1) solid black;
-  padding: ($gutter * 2) ($gutter * 2) 0;
-  margin-left: $gutter * 4;
   position: relative;
+  height: max-content;
+  display: none;
+
+  @include media(md) {
+    margin-left: $gutter * 4;
+    border: ($gutter * 0.1) solid black;
+    padding: ($gutter * 2) ($gutter * 2) 0;
+  }
+
+  &.-is-active {
+    display: initial;
+    animation: slider-in ($transition * 2) both;
+  }
 
   &::after {
     @extend %absolute;
 
-    content: url(../images/product-decoration.png);
+    content: url("http://milo-casa.com/wp/wp-content/themes/milo_casa/dist/images/product-decoration.png");
     bottom: unset;
     left: unset;
     transform: translate(60%, -15%);
-    z-index: -1;
+    z-index: 1;
+    display: none;
+
+    @include media(md) {
+      display: initial;
+    }
   }
 
   &__cell {
@@ -30,30 +45,51 @@
 
   &__wrapper {
     width: 100%;
-    padding: ($gutter * 6) 0;
+
+    @include media(md) {
+      padding: ($gutter * 6) 0;
+    }
 
     &::before {
       @extend %absolute;
 
       content: "";
+      transform: translate(-$gutter * 6, -$gutter * 2);
       width: calc(100% + #{$gutter * 9});
       height: calc(100% - #{$gutter * 2});
       top: unset;
       border: ($gutter * 0.1) solid black;
-      transform: translate(-$gutter * 6, -$gutter * 2);
       z-index: -1;
+      display: none;
+
+      @include media(md) {
+        display: initial;
+      }
+    }
+
+    &--dont-transform {
+      .flickity-slider {
+        @include media(md) {
+          transform: none !important;
+        }
+      }
     }
 
     &--nav {
       padding: 0;
+      width: auto;
 
       &::before {
         display: none;
       }
 
       #{$root}__cell {
-        width: $gutter * 12.5;
-        margin: ($gutter * 3);
+        width: calc(100% / 4);
+        margin: ($gutter * 1);
+
+        @include media(md) {
+          width: $gutter * 12.5;
+        }
       }
 
       #{$root}__image {
@@ -62,5 +98,15 @@
         object-fit: contain;
       }
     }
+  }
+}
+
+@keyframes slider-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

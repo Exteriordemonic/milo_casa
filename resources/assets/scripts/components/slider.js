@@ -1,8 +1,8 @@
 var Flickity = require('flickity-as-nav-for');
 
 const CONFIG = {
-  ELEM: '.flickity-main-slider',
-  NAV: '.flickity-slider-nav',
+  ELEM: '.-is-active .flickity-main-slider',
+  NAV: '.-is-active .flickity-slider-nav',
 };
 
 const Slider = {

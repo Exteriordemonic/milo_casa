@@ -14,6 +14,7 @@ const smoothScroll = {
   addEvent() {
     this.$trigger.forEach(element => {
       element.addEventListener('click', (event) => {
+          console.log('test');
           event.preventDefault();
           const $this = event.currentTarget;
           const item = $this.href.split('#')[1];

@@ -1,0 +1,38 @@
+.famille {
+  margin-top: $gutter * 10;
+
+  &__title {
+    @extend .title;
+    @extend %double-border;
+
+    font-weight: 500;
+    display: inline-block;
+
+    @include media(xs) {
+      padding: ($gutter) ($gutter * 3);
+    }
+
+    &::before {
+      transform: translate($gutter * 0.5, $gutter * 0.5);
+    }
+  }
+
+  &__subtitle {
+    @extend .text;
+
+    margin-top: $gutter * 3;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: $gutter * 6;
+    width: 100%;
+    padding: 0;
+    margin-top: $gutter * 6;
+
+    @include media(xs) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

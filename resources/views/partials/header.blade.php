@@ -8,7 +8,7 @@
       @include('components.hamburger')
       @include('components.social-icons', ['class'=>'header__social-media'])
     </div>
-    <a href="/" class="header__brand-wrapper">
+    <a href="{{ get_home_url() }}" class="header__brand-wrapper">
       {!! image($logo, 'full', 'header__brand') !!}
     </a>
     <div class="header__cell header__cell--right">

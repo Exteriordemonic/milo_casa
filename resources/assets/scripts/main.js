@@ -15,8 +15,12 @@ import aboutUs from './routes/about';
 
 //Components
 import hamburger from './components/hamburger';
+import wishlist from './components/wishlist';
 import smoothScroll from './components/smooth-scroll';
 import slider from './components/slider';
+import moreContent from './components/more-content';
+import variation from './components/variation';
+import search from './components/search';
 
 
 /** Populate Router instance with DOM routes */
@@ -33,6 +37,14 @@ const routes = new Router({
 jQuery(document).ready(() => {
   routes.loadEvents();
   hamburger.init();
+  wishlist.init();
   smoothScroll.init();
   slider.init();
+  moreContent.init();
+  variation.init();
+  search.init();
 });
+
+setTimeout(() => {
+  slider.resize();
+}, 100);

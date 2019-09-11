@@ -1,39 +1,30 @@
-<div class="slider">
+@php
+  $slider = get_field('product-colors');
+@endphp
+
+@foreach ($slider as $slide)
+
+@php
+  $images = $slide['images'];
+  $colorID = $slide['color'][0];
+  $pa_color = get_term_by( 'id', $colorID, 'pa_color');
+@endphp
+<div class="slider @if($loop->first) -is-active @endif" data-variation-slide={{ $pa_color->slug }}>
   <!-- Flickity HTML init -->
   <div class="slider__wrapper flickity-main-slider">
-    <div class="slider__cell">
-      {!! image(184, 'full', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(183, 'full', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(182, 'full', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(182, 'full', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(182, 'full', 'slider__image') !!}
-    </div>
+    @foreach ($images as $img)
+      <div class="slider__cell">
+        {!! image($img['ID'], 'full', 'slider__image') !!}
+      </div>
+    @endforeach
   </div>
   <!-- NAV -->
-  <div class="slider__wrapper slider__wrapper--nav flickity-slider-nav">
-    <div class="slider__cell">
-      {!! image(184, 'slider_thumbnail', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(183, 'slider_thumbnail', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(182, 'slider_thumbnail', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(182, 'slider_thumbnail', 'slider__image') !!}
-    </div>
-    <div class="slider__cell">
-      {!! image(182, 'slider_thumbnail', 'slider__image') !!}
-    </div>
+  <div class="slider__wrapper slider__wrapper--nav @if(count($images) < 4) slider__wrapper--dont-transform @endif flickity-slider-nav">
+    @foreach ($images as $img)
+      <div class="slider__cell">
+        {!! image($img['ID'], 'slider_thumbnail', 'slider__image') !!}
+      </div>
+    @endforeach
   </div>
-
 </div>
+@endforeach

@@ -32,12 +32,16 @@
 @import "components/additional-links";
 @import "components/section";
 @import "components/button";
+@import "components/attribute";
+@import "components/search";
 
 /** Blocks */
 @import "blocks/product";
 @import "blocks/slider";
 @import "blocks/product-dsc";
 @import "blocks/more-content";
+@import "blocks/attributes";
+@import "blocks/famille";
 
 /** Partials */
 @import "partials/header";
@@ -51,5 +55,6 @@
 @import "partials/collection";
 @import "partials/products";
 @import "partials/product-details";
+@import "partials/wishlist";
 
 /** Pages */

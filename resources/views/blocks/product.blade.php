@@ -15,15 +15,19 @@
 *
 * Styles: /blocks/product
 * */
-$_product = wc_get_product( $product->ID );
-$permalink = $_product -> get_permalink();
-$img = $_product -> get_image_id();
-$name = $_product -> get_name();
-$price = $_product -> get_price_html();
-$add = $_product -> add_to_cart_url();
+$id = $product->ID ? $product->ID : $myID;
+$_product = wc_get_product( $id );
+if ($_product) {
+  $permalink = $_product -> get_permalink();
+  $img = $_product -> get_image_id();
+  $name = $_product -> get_name();
+  $price = $_product -> get_price_html();
+  $add = $_product -> add_to_cart_url();
+}
 
 @endphp
 
+@if ($_product)
 <div class="product -is-hover">
   <a href="{{ $permalink ? $permalink : '/' }}" class="product__img-wrapper">
     {!! image($img, 'full', 'product__img') !!}
@@ -40,3 +44,4 @@ $add = $_product -> add_to_cart_url();
     {{ _e('Add to card', 'MiloCasa') }}
   </a>
 </div>
+@endif

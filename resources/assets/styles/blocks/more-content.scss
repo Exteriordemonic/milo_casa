@@ -1,6 +1,14 @@
 .more-content {
+  max-width: $gutter * 30;
+
   &__more {
-    max-height: 0;
-    overflow: hidden;
+    display: none;
+  }
+
+  &__button {
+    @extend .button;
+    @extend .button--underline;
+
+    margin-top: $gutter;
   }
 }

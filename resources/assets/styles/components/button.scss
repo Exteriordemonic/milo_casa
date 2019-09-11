@@ -8,6 +8,7 @@
   width: 100%;
   text-align: center;
   box-shadow: ($gutter * 1) ($gutter * 1) ($gutter * 0.5) rgba(color("dark"), 0.02);
+  cursor: pointer;
 
   @include media(xs) {
     width: auto;
@@ -31,6 +32,32 @@
 
     &:hover {
       background-color: rgba(color(special-light), 0.6);
+    }
+  }
+
+  &--underline {
+    background-color: transparent;
+    border-color: transparent;
+    padding: ($gutter * 0.2) 0;
+    outline: 0;
+    box-shadow: none;
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+    width: auto;
+
+    &::before {
+      @extend %absolute;
+
+      content: "";
+      top: unset;
+      width: 100%;
+      height: $gutter * 0.1;
+      background-color: color(dark);
+    }
+
+    &:hover {
+      background-color: transparent;
     }
   }
 }

@@ -1,0 +1,49 @@
+.wishlist {
+  @extend %absolute;
+
+  position: fixed;
+  background: color("light");
+  z-index: z-index("wishlist");
+  opacity: 0;
+  pointer-events: none;
+  padding: ($gutter * 5) 0;
+  transition: $transition;
+
+  &.-is-active {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    @extend .title;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $gutter * 3;
+    margin: ($gutter * 5) 0;
+    max-height: calc(100vh - #{$gutter * 20});
+    padding: 0;
+    overflow-y: auto;
+
+    @include media(xs) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__elem {
+    height: $gutter * 24;
+  }
+}

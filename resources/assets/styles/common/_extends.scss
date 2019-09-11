@@ -50,7 +50,7 @@
     &::after {
       @extend %absolute;
 
-      content: url(../images/special.png);
+      content: url("http://milo-casa.com/wp/wp-content/themes/milo_casa/dist/images/special.png");
       top: unset;
       bottom: -$gutter * 3.5;
       left: -$gutter * 4;
@@ -78,7 +78,7 @@
   &::after {
     @extend %absolute;
 
-    content: url(../images/down-arrow.svg);
+    content: url(http://milo-casa.com/wp/wp-content/themes/milo_casa/dist/images/down-arrow.svg);
     top: unset;
     bottom: -$gutter * 3;
     z-index: -1;

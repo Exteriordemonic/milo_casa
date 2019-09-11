@@ -6,6 +6,7 @@
 
     @include('partials.header')
     @include('partials.sidebar')
+    @include('partials.wishlist')
 
     <div class="wrap" role="document">
       <div class="content">
