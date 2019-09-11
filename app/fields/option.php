@@ -29,5 +29,9 @@ $option
         ->addWysiwyg('contact_content_top', ['tytle' => 'Contact top', 'new_lines'=>'br'])
         ->addWysiwyg('contact_content_bottom', ['title' => 'Contact bottom', 'new_lines'=>'br'])
         ->addImage('contact_img', ['title' => 'Image for background', 'new_lines'=>'br'])
+    ->addTab('Wishlist', ['label' => 'Wishlsit', 'placement' => 'left'])
+        ->addText('wishlsit_title', ['title' => 'Title'])
+        ->addTextarea('wishlsit_empty', ['title' => 'Wishlsit empty message', 'new_lines'=>'br'])
+        ->addTextarea('wishlsit_login', ['title' => 'Wishlsit you need to login message', 'new_lines'=>'br'])
     ;
 return $option;
