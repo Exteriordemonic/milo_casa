@@ -1,8 +1,11 @@
 @php
   $title = 'Wishlist';
   $empty = 'Your wishlist is empty';
-  $wishlistProducts = '191,191,191,191,191,191,192';
-  $wishlistArray = explode(",",$wishlistProducts);
+  $login = 'You need to login to start create your Wishlist';
+  $wishlistProducts = '';
+  if ($wishlistProducts != '') {
+    $wishlistArray = explode(",",$wishlistProducts);
+  }
 
 @endphp
 
@@ -32,6 +35,16 @@
     <p class="wishlist__dsc">
       {{ $empty }}
     </p>
+
+      @if (!is_user_logged_in())
+      <p class="wishlist__dsc wishlist__dsc--login">
+        {{ $login }}
+        <a href="{{ get_permalink( get_option('woocommerce_myaccount_page_id') ) }}" class="button wishlist__login">
+          {{ __('Login', 'MiloCasa') }}
+        </a>
+      </p>
+      @endif
+
     @endif
 
   </div>

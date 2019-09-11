@@ -22,6 +22,25 @@
     @extend .title;
   }
 
+  &__dsc {
+    @extend .text;
+
+    width: 100%;
+    margin: ($gutter * 5) 0 0;
+
+    &--login {
+      margin-top: 0;
+    }
+  }
+
+  &__login {
+    margin: $gutter 0;
+
+    @include media(xs) {
+      margin: 0 $gutter;
+    }
+  }
+
   &__close {
     position: absolute;
     right: 0;
