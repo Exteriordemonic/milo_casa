@@ -17,7 +17,7 @@ const search = {
   addEvents() {
     this.trigger.forEach(element => {
       element.addEventListener('click', e => {
-        e.preventDefault;
+        e.preventDefault();
 
         if (window.innerWidth > 992) {
           if (this.input.value) {

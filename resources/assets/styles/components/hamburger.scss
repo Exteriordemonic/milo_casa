@@ -10,7 +10,8 @@
   margin: 0;
   cursor: pointer;
 
-  &--close-wishlist {
+  &--close-wishlist,
+  &--close-mini-cart {
     #{$root}__line {
       background-color: color(dark);
 

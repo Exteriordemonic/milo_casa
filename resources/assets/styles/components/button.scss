@@ -61,3 +61,39 @@
     }
   }
 }
+
+.button-x {
+  $root: &;
+
+  position: relative;
+  background: none;
+  border: 0;
+  width: $gutter * 4;
+  height: $gutter * 4;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    @extend %absolute;
+
+    content: "";
+    width: 25%;
+    height: $gutter * 0.2;
+    border-radius: 20%;
+    background: color("dark");
+    transition: $transition;
+    transform-origin: center;
+    transition-delay: 0, 0, $transition;
+    transition-property: top, bottom, transform;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

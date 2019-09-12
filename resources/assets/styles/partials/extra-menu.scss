@@ -71,7 +71,7 @@
           @extend %absolute;
 
           width: 100%;
-          height: $gutter * 0.05;
+          height: $gutter * 0.1;
           top: unset;
           bottom: $gutter * 0.1;
           background: color(dark);
@@ -146,4 +146,8 @@
       }
     }
   }
+}
+
+.post-type-archive #menu-categories {
+  border-top: $gutter * 0.3 solid black;
 }

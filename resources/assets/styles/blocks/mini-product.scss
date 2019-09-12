@@ -1,0 +1,47 @@
+.mini-product {
+  @include cssLock("grid-gap", 360, 1920, (12, 24));
+
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  &__image {
+    height: 100% !important;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__desciption {
+    @include cssLock("padding", 360, 1920, (12, 24));
+
+    padding-right: $gutter * 2.5;
+    padding-left: 0;
+  }
+
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (6, 12));
+
+    span {
+      display: none;
+    }
+  }
+
+  &__price {
+    .subtitle {
+      @extend .text;
+
+      font-weight: 400;
+    }
+  }
+
+  &__remove {
+    @extend .button-x;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

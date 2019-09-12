@@ -8,6 +8,6 @@ $collection = new FieldsBuilder('collection');
 
 $collection
     ->addImage('collection_bg', ['label'=>'Background of collection section'])
-    ->addRelationship('products', ['label'=>'Products', 'post_type'=>'product'])
+    ->addTaxonomy('products', ['label'=>'Products', 'taxonomy'=>'product_cat'])
 ;
 return $collection;

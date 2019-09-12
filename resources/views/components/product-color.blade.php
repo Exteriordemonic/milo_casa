@@ -16,7 +16,7 @@
       class="attribute"
       data-variation-id={{ $color['variation_id'] }}
       title={{ $color['attributes']['attribute_pa_color'] }}
-      data-price='{{ $color['price_html'] }}'
+      data-price='{{ $color['price_html'] ? $color['price_html'] : $_product->get_price_html() }}'
       data-variation-toggle
       href="#main"
       data-smooth-scroll

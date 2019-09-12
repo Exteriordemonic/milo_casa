@@ -7,6 +7,7 @@
     @include('partials.header')
     @include('partials.sidebar')
     @include('partials.wishlist')
+    @include('partials.mini-cart')
 
     <div class="wrap" role="document">
       <div class="content">

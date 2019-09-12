@@ -21,6 +21,9 @@ import slider from './components/slider';
 import moreContent from './components/more-content';
 import variation from './components/variation';
 import search from './components/search';
+import miniCart from './components/mini-cart';
+import addToCart from './components/add-to-cart';
+import removeFromCart from './components/remove-from-cart';
 
 
 /** Populate Router instance with DOM routes */
@@ -43,6 +46,9 @@ jQuery(document).ready(() => {
   moreContent.init();
   variation.init();
   search.init();
+  miniCart.init();
+  addToCart.init();
+  removeFromCart.init();
 });
 
 setTimeout(() => {

@@ -12,12 +12,14 @@
           @foreach ($collection as $item)
           <li class="collection__elem">
             @php
-              $_product = get_product($item->ID);
-              $link = $_product->get_permalink();
-              $img = $_product->get_image_id();
-              $bg = get_field('product-list', $_product->get_id())[ID];
-              $title = $_product->get_name();
-              $dsc = $_product->get_short_description();
+              $cat = get_term_by('id', $item, 'product_cat');
+              // $_product = get_product($item->ID);
+              $link = get_term_link($cat);
+              $img = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+              // $img = $_product->get_image_id();
+               $bg = get_field('bg_image',  'product_cat_' . $item)[ID];
+               $title = $cat->name;
+               $dsc = $cat->description;
             @endphp
             <a href="{{ $link }}">
               {!! image($img,'full', 'collection__img') !!}
