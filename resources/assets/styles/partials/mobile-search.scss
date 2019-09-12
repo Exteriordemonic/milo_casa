@@ -1,0 +1,7 @@
+.mobile-search {
+  display: block;
+
+  @include media(xs) {
+    display: none;
+  }
+}

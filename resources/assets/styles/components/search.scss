@@ -1,9 +1,17 @@
 .search {
   $root: &;
 
+  width: 100%;
+
+  @include media(xs) {
+    width: auto;
+  }
+
   &.-is-active {
     #{$root}__input {
-      max-width: $gutter * 20;
+      @include media(xs) {
+        max-width: $gutter * 20;
+      }
     }
   }
 
@@ -23,13 +31,25 @@
     text-align: center;
     line-height: $gutter * 2.2;
     text-transform: uppercase;
-    max-width: 0;
+    max-width: 100%;
+    width: 100%;
     overflow: hidden;
     transition: $transition;
     outline: 0 !important;
 
+    @include media(xs) {
+      max-width: 0;
+    }
+
     &::placeholder {
       color: color(dark);
     }
+  }
+
+  &__button {
+    @extend .button;
+    @extend .button--special-light;
+
+    margin: ($gutter * 2) 0 ($gutter * 4);
   }
 }

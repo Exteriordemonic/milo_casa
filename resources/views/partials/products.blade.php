@@ -1,37 +1,27 @@
-@php
-  if($cat_id):
-    $args = array(
-      'post_type' => 'product',
-      'numberposts' => 999,
-      'tax_query'             => array(
-          array(
-              'taxonomy'      => 'product_cat',
-              'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-              'terms'         => $cat_id,
-              'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
-          ),
-      )
-    );
-  else :
-    $args = array(
-      'post_type' => 'product',
-      'numberposts' => 999,
-    );
-  endif;
 
-  $products = get_posts($args);
-@endphp
-
-@if($products)
+@if(have_posts())
 <section class="shop">
   <div class="container">
     <ul class="products" id="products">
-      @foreach ($products as $product)
-      <li class="products__elem">
-        @include('blocks.product', ['product' => $product])
-      </li>
-      @endforeach
+      @while(have_posts()) @php the_post() @endphp
+        @php
+          $product = wc_get_product( get_the_id() );
+        @endphp
+        <li class="products__elem">
+          @include('blocks.product', ['product' => $product, 'myID' => get_the_id()])
+        </li>
+      @endwhile
     </ul>
   </div>
 </section>
+@else
+<section class="shop">
+    <div class="container">
+      <p class="shop__empty">
+        {{ __('Products not found...', 'MiloCasa') }}
+      </p>
+    </div>
+  </section>
 @endif
+
+

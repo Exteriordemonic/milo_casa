@@ -1,0 +1,7 @@
+.shop {
+  &__empty {
+    @extend .title;
+
+    margin: ($gutter * 4) 0;
+  }
+}
