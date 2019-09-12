@@ -1,3 +1,4 @@
+@if ($_GET['s'] || $_GET['post_type'])
 <section class="mobile-search">
   <div class="container">
     <form class="search -is-active" action="{{ get_home_url() }}" method="GET" data-search-form>
@@ -9,3 +10,4 @@
     </form>
   </div>
 </section>
+@endif

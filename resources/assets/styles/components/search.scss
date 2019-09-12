@@ -9,6 +9,8 @@
 
   &.-is-active {
     #{$root}__input {
+      max-width: 100%;
+
       @include media(xs) {
         max-width: $gutter * 20;
       }
@@ -31,15 +33,11 @@
     text-align: center;
     line-height: $gutter * 2.2;
     text-transform: uppercase;
-    max-width: 100%;
+    max-width: 0;
     width: 100%;
     overflow: hidden;
     transition: $transition;
     outline: 0 !important;
-
-    @include media(xs) {
-      max-width: 0;
-    }
 
     &::placeholder {
       color: color(dark);

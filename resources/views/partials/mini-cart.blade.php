@@ -30,7 +30,7 @@
     <footer class="mini-cart__footer">
       <div class="mini-cart__subtotal">
         <span class="text bold">
-          {{ __('SUBTOTAL:', 'MiloCasa') }}
+          {{ __('Total:', 'MiloCasa') }}
         </span>
         <span class="mini-cart__price text" data-price>
           {{ WC()->cart->get_subtotal() }}
@@ -38,10 +38,10 @@
       </div>
     </footer>
     <a class="mini-cart__checkout title bold" href="{{ $woocommerce->cart->get_checkout_url() }}">
-      {{ __('CHECKOUT', 'MiloCasa') }}
+      {{ __('Terminer ma commande', 'MiloCasa') }}
     </a>
     <a class="mini-cart__to-card text" href="{{ wc_get_cart_url() }}">
-        {{ __('Go to basket', 'MiloCasa') }}
+        {{ __('Voir mon panier', 'MiloCasa') }}
     </a>
   </div>
 </div>
