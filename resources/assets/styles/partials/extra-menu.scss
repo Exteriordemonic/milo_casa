@@ -3,7 +3,7 @@
     "margin-top",
     360,
     1920,
-    ($gutter_num * 12, $gutter_num * 30)
+    ($gutter_num * 10, $gutter_num * 20)
   );
   @include cssLock(
     "margin-bottom",
@@ -49,6 +49,12 @@
   li {
     a {
       @extend .link;
+      @extend .link--normalize-font;
+
+      text-transform: uppercase;
+      opacity: 0.6;
+      letter-spacing: -0.1px;
+      color: color(dark);
 
       @include cssLock(
         "padding",
@@ -65,6 +71,8 @@
 
     &.current-menu-item {
       a {
+        opacity: 1;
+
         &::after {
           content: "";
 
@@ -146,8 +154,4 @@
       }
     }
   }
-}
-
-.post-type-archive #menu-categories {
-  border-top: $gutter * 0.3 solid black;
 }

@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/milo_casa/wp-content/themes/milo_casa",
+  "publicPath": "/wp-content/themes/milo_casa",
   "devUrl": "http://localhost/milo_casa",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

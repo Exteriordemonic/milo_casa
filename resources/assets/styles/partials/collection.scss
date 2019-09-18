@@ -71,6 +71,12 @@
     }
 
     a {
+      width: 100%;
+
+      @include media(xs) {
+        width: 60%;
+      }
+
       &:hover {
         #{$root}__content {
           opacity: 1;

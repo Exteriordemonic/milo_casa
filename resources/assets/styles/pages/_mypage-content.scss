@@ -1,0 +1,43 @@
+.page-template-page-content {
+  padding: 0 !important;
+}
+
+.mypage-content {
+  padding-bottom: $gutter * 20;
+
+  .container {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .title;
+
+    color: color(special);
+    margin: $gutter * 2;
+    letter-spacing: $gutter * 0.3;
+  }
+
+  p {
+    @extend .text;
+
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: $gutter * 70;
+    margin: 0 auto;
+  }
+
+  a {
+    color: color(special);
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

@@ -13,6 +13,7 @@ $page
     ->addTab('Main setting', ['label' => 'Main setting', 'placement' => 'left'])
         ->addImage('product-list', ['label'=>'Image in Collection'])
     ->addTab('Colors', ['label' => 'Colors', 'placement' => 'left'])
+        ->addGallery('colors gallery')
         ->addRepeater('product-colors')
             ->addTaxonomy('color', ['taxonomy'=>'pa_color', 'add_term'=>'0',])
             ->addGallery('images')

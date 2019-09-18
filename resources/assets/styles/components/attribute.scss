@@ -28,5 +28,7 @@
 
   &__image {
     @extend %image;
+
+    border-radius: 100%;
   }
 }

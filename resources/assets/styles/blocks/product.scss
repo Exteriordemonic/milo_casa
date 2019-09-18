@@ -3,7 +3,7 @@
 
   border: 1px solid color(dark);
   opacity: 1;
-  padding: 40% ($gutter * 2) ($gutter * 2);
+  padding: ($gutter * 2) ($gutter * 2);
   width: 100%;
   position: relative;
   display: flex;
@@ -11,6 +11,7 @@
   align-items: flex-start;
   transition: $transition;
   flex-direction: column;
+  flex-wrap: wrap;
 
   @include media(xs) {
     justify-content: space-between;
@@ -31,22 +32,21 @@
     }
   }
 
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
   &__img-wrapper {
-    @extend %absolute;
-
-    top: 10%;
-    bottom: unset;
-    height: 30% !important;
-    width: auto !important;
-
-    @include media(xs) {
-      height: 55% !important;
-    }
+    width: 100% !important;
   }
 
   &__img {
-    height: 100% !important;
-    width: auto !important;
+    height: 100% auto !important;
+    width: 100% !important;
     margin: 0 auto ($gutter * 2);
   }
 

@@ -54,3 +54,7 @@ jQuery(document).ready(() => {
 setTimeout(() => {
   slider.resize();
 }, 100);
+
+setTimeout(() => {
+  slider.resize();
+}, 300);

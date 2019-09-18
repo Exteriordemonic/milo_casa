@@ -1,5 +1,10 @@
 .product-details {
-  padding: $gutter * 10 0;
+  @include cssLock(
+    "margin-top",
+    360,
+    1920,
+    ($gutter_num * 6, $gutter_num * 15)
+  );
 
   .container {
     max-width: 1300px;

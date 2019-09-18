@@ -36,7 +36,7 @@
     max-width: $gutter * 70;
 
     @include media(xl) {
-      padding: ($gutter * 10) ($gutter * 10) 0;
+      padding: ($gutter * 10) ($gutter * 10) ($gutter * 3);
     }
   }
 

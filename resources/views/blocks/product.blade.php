@@ -32,16 +32,18 @@ if ($_product) {
   <a href="{{ $permalink ? $permalink : '/' }}" class="product__img-wrapper">
     {!! image($img, 'full', 'product__img') !!}
   </a>
-  <a  href="{{ $permalink ? $permalink : '/' }}" class="product__content">
-    <h3 class="product__title">
-      {{ $name }}
-    </h3>
-    <p class="product__price">
-      {!! $price !!}
-    </p>
-  </a>
-  <a href="{{ $add }}" class="product__add">
-    {{ _e('Add to card', 'MiloCasa') }}
-  </a>
+  <div class="product__footer">
+    <a  href="{{ $permalink ? $permalink : '/' }}" class="product__content">
+      <h3 class="product__title">
+        {{ $name }}
+      </h3>
+      <p class="product__price">
+        {!! $price !!}
+      </p>
+    </a>
+    <a href="{{ $add }}" class="product__add">
+      {{ _e('Add to card', 'MiloCasa') }}
+    </a>
+  </div>
 </div>
 @endif

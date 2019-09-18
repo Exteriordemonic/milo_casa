@@ -8,6 +8,7 @@ $collection = new FieldsBuilder('collection');
 
 $collection
     ->addImage('collection_bg', ['label'=>'Background of collection section'])
-    ->addTaxonomy('products', ['label'=>'Products', 'taxonomy'=>'product_cat'])
+    ->addRepeater('familles')
+        ->addTaxonomy('famille', ['label'=>'Familly', 'taxonomy'=>'product_cat'])
 ;
 return $collection;

@@ -1,0 +1,116 @@
+$line: $gutter * 0.1;
+$line-color: rgba(color(dark), 0.4);
+
+.category-menu {
+  @include cssLock(
+    "margin-top",
+    360,
+    1920,
+    ($gutter_num * 6, $gutter_num * 15)
+  );
+  @include cssLock(
+    "margin-bottom",
+    360,
+    1920,
+    ($gutter_num * 3, $gutter_num * 10)
+  );
+
+  z-index: 10;
+  position: relative;
+
+  &__nav {
+    max-width: $gutter * 90;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 $gutter*2;
+
+    &::before {
+      @extend %absolute;
+
+      content: "";
+      width: 100%;
+      height: $line;
+      background: $line-color;
+      display: none;
+
+      @include media(sm) {
+        display: initial;
+      }
+    }
+  }
+
+  &__menu {
+    @include cssLock(
+      "margin",
+      360,
+      1920,
+      (-$gutter_num * 0.75, -$gutter_num * 1.5)
+    );
+
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  li {
+    a {
+      @extend .link;
+      @extend .link--normalize-font;
+
+      @include cssLock(
+        "padding",
+        360,
+        1920,
+        ($gutter_num * 0.75, $gutter_num * 1.5)
+      );
+
+      display: inline-block;
+      position: relative;
+      z-index: 10;
+      white-space: nowrap;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+  }
+
+  .current-menu-item {
+    & > a {
+      border: $line solid $line-color;
+
+      @include media(sm) {
+        border: $line solid $line-color;
+        border-top: 0;
+        background: color(light);
+        position: relative;
+        top: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      & > a {
+        @include media(sm) {
+          border: $line solid $line-color;
+          border-bottom: 0;
+          border-top: $line solid $line-color;
+          background: color(light);
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

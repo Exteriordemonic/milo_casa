@@ -21,7 +21,7 @@
   &::after {
     @extend %absolute;
 
-    content: url("http://milo-casa.com/wp/wp-content/themes/milo_casa/dist/images/product-decoration.png");
+    content: url("http://milo-casa.com/wp-content/themes/milo_casa/dist/images/product-decoration.png");
     bottom: unset;
     left: unset;
     transform: translate(60%, -15%);
