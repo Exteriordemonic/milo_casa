@@ -35,7 +35,6 @@ $option
         ->addTextarea('wishlsit_login', ['title' => 'Wishlsit you need to login message', 'new_lines'=>'br'])
     ->addTab('SingleProduct', ['label' => 'SingleProduct', 'placement' => 'left'])
         ->addRepeater('flex', ['min' => 0, 'layout' => 'table'])
-            ->addTrueFalse('2col')
             ->addImage('image', ['title' => 'Icon'])
             ->addLink('link', ['title' => 'link'])
             ->addTextarea('title', [ 'new_lines'=>'br'])

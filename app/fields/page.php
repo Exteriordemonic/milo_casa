@@ -15,8 +15,13 @@ $page
 $page
     ->addTab('Hero', ['placement' => 'left'])
         ->addFields(get_field_partial('components.hero'))
+    ->addTab('Flex', ['label' => 'Flex', 'placement' => 'left'])
+        ->addRepeater('flex', ['min' => 0, 'layout' => 'table'])
+            ->addFields(get_field_partial('components.flex'))
+        ->endRepeater()
     ->addTab('Description', ['placement' => 'left'])
         ->addFields(get_field_partial('components.description'))
     ->addTab('Instagram', ['placement' => 'left'])
-        ->addFields(get_field_partial('components.instagram'));
+        ->addGroup('instagram')
+            ->addFields(get_field_partial('components.flex'));
 return $page;

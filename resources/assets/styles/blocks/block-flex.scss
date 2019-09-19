@@ -1,6 +1,12 @@
 .block-flex {
+  $root: &;
+
+  position: relative;
+
   &__image {
     @extend %image;
+
+    max-height: 40vh;
   }
 
   &__title {
@@ -9,8 +15,10 @@
     position: absolute;
     left: $gutter * 3;
     top: $gutter * 4;
+    letter-spacing: 2px;
 
-    &::before {
+    &::before,
+    &::after {
       @extend %absolute;
 
       content: "";
@@ -21,14 +29,194 @@
       height: 1px;
       border-bottom: 1px solid color(dark);
     }
+
+    &::before {
+      bottom: unset;
+      top: -$gutter;
+      display: none;
+    }
   }
 
   &__link {
     display: block;
     transition: $transition;
+    height: 100%;
 
     &:hover {
       opacity: 0.8;
+    }
+  }
+
+  &__button {
+    @extend .link;
+    @extend .link--small;
+    @extend .link--normalize-font;
+
+    padding: $gutter $gutter * 4;
+    background: rgba(color(dark), 0.7);
+    color: color(light);
+    text-transform: uppercase;
+  }
+
+  &__dsc {
+    @include cssLock("font-size", 360, 1920, (10, 14));
+
+    line-height: 1.5;
+  }
+
+  &--center {
+    #{$root}__wrapper {
+      @extend %absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #{$root}__title {
+      @extend %absolute;
+
+      @include cssLock("font-size", 360, 1920, (24, 32));
+
+      position: relative;
+
+      &::before {
+        display: initial;
+      }
+    }
+  }
+
+  &--center-with-center-lines {
+    #{$root}__wrapper {
+      @extend %absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #{$root}__title {
+      @extend %absolute;
+      @extend .normalize-font;
+
+      @include cssLock("font-size", 360, 1920, (14, 18));
+
+      text-align: center;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 400;
+
+      &::before,
+      &::after {
+        display: initial;
+        right: 0;
+        left: 0;
+      }
+
+      &::before {
+        top: -$gutter * 3;
+      }
+
+      &::after {
+        bottom: -$gutter * 3;
+      }
+    }
+  }
+
+  &--cta {
+    #{$root}__wrapper {
+      @extend %absolute;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #{$root}__title {
+      @extend %absolute;
+
+      @include cssLock("font-size", 360, 1920, (40, 72));
+
+      position: relative;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &--full {
+    grid-column: 2 span;
+  }
+
+  &--light {
+    color: color(light);
+
+    #{$root}__title {
+      &::after,
+      &::before {
+        border-color: color(light);
+      }
+    }
+  }
+
+  &--dark {
+    color: color(dark);
+  }
+
+  &--with-text {
+    overflow: hidden;
+
+    #{$root}__title {
+      @extend .normalize-font;
+
+      @include cssLock("font-size", 360, 1920, (24, 32));
+
+      position: relative;
+      left: 0;
+      top: 0;
+      margin-bottom: $gutter;
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: color(special);
+
+      &::after {
+        width: 0;
+        right: 0;
+        left: unset;
+        bottom: -$gutter * 0.5;
+        transition: $transition * 2;
+        transition-delay: $transition * 0.7;
+      }
+    }
+
+    #{$root}__wrapper {
+      position: absolute;
+      bottom: 0;
+      background: rgba(color("light"), 0.9);
+      padding: ($gutter * 1) ($gutter * 3) ($gutter * 1) 25%;
+      opacity: 0;
+      transition: $transition;
+      transform: translateY(100%);
+    }
+
+    &:hover {
+      #{$root}__wrapper {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #{$root}__title {
+        &::after {
+          width: 300%;
+        }
+      }
     }
   }
 }

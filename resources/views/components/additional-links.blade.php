@@ -5,7 +5,7 @@
 @if ($additionLinks)
 
 <form class="search" action="{{ get_home_url() }}" method="GET" data-search-form>
-  <input class="search__input" type="text" name="s" placeholder="SEARCH">
+  <input class="search__input" type="text" name="s" placeholder="">
   <input type="hidden" name="post_type" value="product">
 </form>
 

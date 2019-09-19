@@ -10,6 +10,10 @@ body {
   padding: 0;
 }
 
+html {
+  margin-bottom: 0 !important;
+}
+
 #wpadminbar {
   opacity: 0;
   user-select: none;

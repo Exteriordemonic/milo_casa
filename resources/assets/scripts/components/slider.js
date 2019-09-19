@@ -14,7 +14,6 @@ const Slider = {
     if (this.elem) {
       this.slider = new Flickity(ELEM, {
         pageDots: false,
-        prevNextButtons: false,
         contain: true,
         cellSelector: '.slider__cell',
         wrapAround: true,

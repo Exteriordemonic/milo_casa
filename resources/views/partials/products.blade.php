@@ -18,7 +18,7 @@
 <section class="shop">
     <div class="container">
       <p class="shop__empty">
-        {{ __('Products not found...', 'MiloCasa') }}
+        {{ __('Aucun résultat...', 'MiloCasa') }}
       </p>
     </div>
   </section>

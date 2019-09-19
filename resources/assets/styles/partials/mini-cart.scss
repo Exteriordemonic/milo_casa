@@ -114,15 +114,20 @@
   }
 
   &__checkout {
-    @include cssLock("padding", 360, 1920, (6, 12));
+    @extend .normalize-font;
+    @extend .major-text;
 
-    padding-bottom: 0;
+    @include cssLock("padding", 360, 1920, (12, 24));
+
     text-align: center;
     display: block;
   }
 
   &__to-card {
-    @include cssLock("padding", 360, 1920, (6, 12));
+    @extend .normalize-font;
+
+    @include cssLock("font-size", 360, 1920, (10, 14));
+    @include cssLock("padding", 360, 1920, (12, 24));
 
     padding-top: 0;
     text-align: center;
@@ -130,5 +135,6 @@
     font-weight: 600;
     color: color("greyy");
     text-transform: uppercase;
+    letter-spacing: 2px;
   }
 }

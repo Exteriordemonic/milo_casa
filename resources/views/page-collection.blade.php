@@ -6,5 +6,6 @@
 
 @section('content')
   @include('partials.extra-menu')
+  @include('partials.categories-menu')
   @include('partials.collection')
 @endsection

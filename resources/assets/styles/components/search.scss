@@ -18,18 +18,14 @@
   }
 
   &__input {
-    @extend .text;
+    @extend .normalize-font;
+
+    @include cssLock("font-size", 360, 1920, (10, 12));
 
     border: 0;
+    border-bottom: $gutter * 0.1 solid color(light);
+    color: color(light);
     background: transparent;
-    border-radius: $gutter;
-    box-shadow: 3px 3px 5px 1px rgba(55, 62, 64, 0.13), inset 12px 12px 30px 2px rgba(0, 0, 0, 0.17);
-    background-image:
-      linear-gradient(
-        to top,
-        rgba(255, 252, 252, 0.8) 0%,
-        rgba(229, 225, 225, 0) 100%
-      );
     text-align: center;
     line-height: $gutter * 2.2;
     text-transform: uppercase;
@@ -38,9 +34,11 @@
     overflow: hidden;
     transition: $transition;
     outline: 0 !important;
+    font-weight: 400;
+    letter-spacing: 2px;
 
     &::placeholder {
-      color: color(dark);
+      color: color(light);
     }
   }
 

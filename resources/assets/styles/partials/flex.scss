@@ -1,4 +1,13 @@
 .flex {
+  &--home {
+    margin-top: $gutter * 3;
+  }
+
+  &--instagram {
+    margin-top: $gutter * 3;
+    margin-bottom: $gutter * 3;
+  }
+
   .container {
     @media (max-width: 767px) {
       width: 100%;
@@ -8,6 +17,7 @@
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
 
     @include media(xs) {
       grid-template-columns: 1fr 1fr;

@@ -30,11 +30,12 @@
   }
 
   &__price {
-    .subtitle {
-      @extend .text;
+    @extend .normalize-font;
 
-      font-weight: 400;
-    }
+    display: inline !important;
+    text-transform: lowercase;
+    font-size: 12px;
+    font-weight: 500;
   }
 
   &__remove {
@@ -43,5 +44,26 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  &__familly {
+    display: inline !important;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &__cat {
+    display: inline !important;
+    text-transform: lowercase;
+    font-size: 12px;
+  }
+
+  &__name {
+    @extend .normalize-font;
+
+    display: inline !important;
+    text-transform: lowercase;
+    font-size: 12px;
+    font-weight: 400;
   }
 }

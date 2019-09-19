@@ -10,7 +10,8 @@ $collection
     ->setLocation('page_template', '==', 'views/page-collection.blade.php');
 
 $collection
-    ->addTab('Main setting', ['placement' => 'left'])
-        ->addFields(get_field_partial('components.collection'))
+    ->addRepeater('flex', ['min' => 0, 'layout' => 'table'])
+        ->addFields(get_field_partial('components.flex'))
+    ->endRepeater()
     ;
 return $collection;

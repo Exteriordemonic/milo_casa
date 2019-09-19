@@ -98,6 +98,15 @@
       }
     }
   }
+
+  .flickity-prev-next-button {
+    top: 80%;
+  }
+
+  .flickity-prev-next-button.previous {
+    left: unset;
+    right: $gutter * 5.5;
+  }
 }
 
 @keyframes slider-in {
