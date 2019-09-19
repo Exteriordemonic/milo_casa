@@ -6,11 +6,10 @@
   position: relative;
   height: max-content;
   display: none;
+  border-bottom: 1px solid color(dark);
 
   @include media(md) {
-    margin-left: $gutter * 4;
-    border: ($gutter * 0.1) solid black;
-    padding: ($gutter * 2) ($gutter * 2) 0;
+    padding: ($gutter * 2) 0;
   }
 
   &.-is-active {
@@ -37,6 +36,7 @@
     opacity: 1;
     width: 100%;
     margin: ($gutter * 3);
+    display: inline-block !important;
   }
 
   &__image {
@@ -47,7 +47,7 @@
     width: 100%;
 
     @include media(md) {
-      padding: ($gutter * 6) 0;
+      padding: ($gutter * 3) 0;
     }
 
     &::before {
@@ -58,7 +58,6 @@
       width: calc(100% + #{$gutter * 9});
       height: calc(100% - #{$gutter * 2});
       top: unset;
-      border: ($gutter * 0.1) solid black;
       z-index: -1;
       display: none;
 

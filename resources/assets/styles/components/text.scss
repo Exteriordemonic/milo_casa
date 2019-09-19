@@ -65,7 +65,15 @@
     font-family: map-get($font-family, "main"), sans-serif;
   }
 
+  &--small {
+    @include cssLock("font-size", 360, 1920, (12, 12));
+  }
+
   &:hover {
     opacity: 0.3;
   }
+}
+
+.normalize-font {
+  font-family: map-get($font-family, "main"), sans-serif;
 }

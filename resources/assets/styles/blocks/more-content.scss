@@ -1,5 +1,9 @@
 .more-content {
+  @include cssLock("font-size", 360, 1920, (10, 14));
+
   max-width: $gutter * 30;
+  line-height: 1.5;
+  color: rgba(color(dark), 0.7);
 
   &__more {
     display: none;
@@ -9,7 +13,11 @@
     @extend .button;
     @extend .button--underline;
 
+    @include cssLock("font-size", 360, 1920, (16, 16));
+
+    text-transform: lowercase;
     margin-top: $gutter;
     display: block;
+    letter-spacing: 1px;
   }
 }

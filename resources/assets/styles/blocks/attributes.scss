@@ -1,15 +1,15 @@
 .attributes {
   display: flex;
   justify-content: flex-start;
-  margin: ($gutter * 1.5) (-$gutter * 1) 0;
+  margin: ($gutter * 1.5) (-$gutter * 2) ($gutter * 1.5);
   width: 100%;
   padding: 0;
 
   @include media(md) {
-    padding-left: $gutter * 4.5;
+    padding-left: $gutter * 1.5;
   }
 
   &__elem {
-    padding: 0 ($gutter * 0.5);
+    padding: 0 ($gutter * 1);
   }
 }

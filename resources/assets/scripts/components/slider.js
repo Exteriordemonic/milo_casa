@@ -18,6 +18,7 @@ const Slider = {
         contain: true,
         cellSelector: '.slider__cell',
         wrapAround: true,
+        draggable: false,
       });
 
       this.nav = new Flickity(NAV, {
@@ -30,6 +31,10 @@ const Slider = {
 
       this.slider.resize();
       this.nav.resize();
+
+      setTimeout(() => {
+        this.resize();
+      }, 100);
     }
   },
 

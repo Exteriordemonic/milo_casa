@@ -13,9 +13,9 @@
   <!-- Flickity HTML init -->
   <div class="slider__wrapper flickity-main-slider">
     @foreach ($images as $img)
-      <div class="slider__cell">
+      <a class="slider__cell" href="{{ image_url($img['ID'], 'full') }}" data-fancybox="gallery{{ $loop->parent->index }}">
         {!! image($img['ID'], 'full', 'slider__image') !!}
-      </div>
+      </a>
     @endforeach
   </div>
   <!-- NAV -->

@@ -97,3 +97,32 @@
     transform: rotate(-45deg);
   }
 }
+
+.button-underline {
+  @extend .minor-text;
+  @extend .normalize-font;
+
+  font-weight: 400;
+  color: color(special);
+  letter-spacing: 2px;
+  border: 0;
+  padding: ($gutter * 0.2) ($gutter * 0.5) ($gutter * 0.1) 0;
+  border-bottom: 1px solid color(dark);
+  position: relative;
+  transition: $transition;
+
+  &::after {
+    @extend %absolute;
+
+    top: unset;
+    bottom: -1px;
+    content: "";
+    height: 25%;
+    border-right: 1px solid color(dark);
+    width: 100%;
+  }
+
+  &:hover {
+    opacity: 0.4;
+  }
+}

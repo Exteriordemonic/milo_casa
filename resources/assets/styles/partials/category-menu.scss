@@ -6,7 +6,7 @@ $line-color: rgba(color(dark), 0.4);
     "margin-top",
     360,
     1920,
-    ($gutter_num * 6, $gutter_num * 15)
+    ($gutter_num * 1, $gutter_num * 3)
   );
   @include cssLock(
     "margin-bottom",
@@ -19,7 +19,7 @@ $line-color: rgba(color(dark), 0.4);
   position: relative;
 
   &__nav {
-    max-width: $gutter * 90;
+    max-width: $gutter * 80;
     margin: 0 auto;
     position: relative;
     padding: 0 $gutter*2;
@@ -60,7 +60,6 @@ $line-color: rgba(color(dark), 0.4);
   li {
     a {
       @extend .link;
-      @extend .link--normalize-font;
 
       @include cssLock(
         "padding",

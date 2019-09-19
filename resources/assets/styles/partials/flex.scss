@@ -1,0 +1,16 @@
+.flex {
+  .container {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include media(xs) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

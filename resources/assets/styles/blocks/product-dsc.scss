@@ -4,7 +4,7 @@
   z-index: 10;
 
   @include media(md) {
-    padding: ($gutter * 6) ($gutter * 2);
+    padding: ($gutter * 6) ($gutter * 10);
   }
 
   &__title {
@@ -18,12 +18,11 @@
     @extend .title;
 
     font-weight: 500;
-    margin-bottom: $gutter * 2;
+    margin-bottom: $gutter * 5;
   }
 
   &__add {
-    @extend .button;
-    @extend .button--special-light;
+    @extend .button-underline;
 
     margin-bottom: $gutter * 5;
   }

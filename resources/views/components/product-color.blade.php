@@ -11,6 +11,7 @@
     @php
       $pa_color = get_term_by( 'slug', $color['attributes']['attribute_pa_color'], 'pa_color');
       $colorImg = get_field('color_image', 'pa_color_'.$pa_color->term_id)[ID];
+      $colorHex = get_field('color_hex', 'pa_color_'.$pa_color->term_id);
     @endphp
     <a
       class="attribute"
@@ -20,8 +21,12 @@
       data-variation-toggle
       href="#main"
       data-smooth-scroll
+      data-color-hex={{ $colorHex }}
+      style="background-color:{{ $colorHex  }}"
     >
+      @if (!$colorHex)
       {!! image($colorImg, 'full', 'attribute__image') !!}
+      @endif
     </a>
   </li>
   @endforeach

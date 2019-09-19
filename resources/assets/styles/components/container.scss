@@ -4,4 +4,8 @@
   margin: 0 auto;
   display: flex;
   max-width: 1300px;
+
+  @include media(sm) {
+    width: calc(100% - #{$gutter * 30});
+  }
 }

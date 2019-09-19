@@ -7,7 +7,6 @@
   );
 
   .container {
-    max-width: 1300px;
     flex-wrap: wrap;
   }
 
@@ -17,7 +16,7 @@
     width: 100%;
 
     @include media(md) {
-      grid-template-columns: ($gutter * 70) auto;
+      grid-template-columns: ($gutter * 60) auto;
     }
   }
 }

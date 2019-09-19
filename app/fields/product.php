@@ -12,6 +12,7 @@ $page
 $page
     ->addTab('Main setting', ['label' => 'Main setting', 'placement' => 'left'])
         ->addImage('product-list', ['label'=>'Image in Collection'])
+        ->addTaxonomy('main_cat', ['taxonomy'=>'product_cat', 'add_term'=>'0',])
     ->addTab('Colors', ['label' => 'Colors', 'placement' => 'left'])
         ->addGallery('colors gallery')
         ->addRepeater('product-colors')

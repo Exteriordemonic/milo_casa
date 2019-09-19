@@ -1,13 +1,14 @@
-/** Vendors */
-@import "vendors/scss-lock/css-lock";
-@import "vendors/fonts";
-
 /** Common */
 @import "common/variables";
 @import "common/mixins";
 @import "common/functions";
 @import "common/animations";
 @import "common/extends";
+
+/** Vendors */
+@import "vendors/scss-lock/css-lock";
+@import "vendors/fonts";
+@import "vendors/fancybox";
 
 /** Import everything from autoload */
 // @import "./autoload/**/*";
@@ -43,6 +44,7 @@
 @import "blocks/attributes";
 @import "blocks/famille";
 @import "blocks/mini-product";
+@import "blocks/block-flex";
 
 /** Partials */
 @import "partials/header";
@@ -62,6 +64,7 @@
 @import "partials/shop";
 @import "partials/woo";
 @import "partials/category-menu";
+@import "partials/flex";
 
 /** Pages */
 @import "pages/mypage-content";

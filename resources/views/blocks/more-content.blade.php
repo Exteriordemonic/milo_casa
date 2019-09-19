@@ -12,11 +12,11 @@
   </div>
   <button
     class="more-content__button"
-    data-text="{{ _e('see more', 'MiloCasa') }}"
-    data-text-show="{{ _e('hide', 'MiloCasa') }}"
+    data-text="{{ _e('AFFICHER PLUS', 'MiloCasa') }}"
+    data-text-show="{{ _e('AFFICHER MINUS', 'MiloCasa') }}"
     data-show-more-button={{ $id }}
     data-is-show="false"
     >
-    {{ _e('see more', 'MiloCasa') }}
+    {{ _e('AFFICHER PLUS', 'MiloCasa') }}
   </button>
 </div>

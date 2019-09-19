@@ -1,18 +1,7 @@
 .extra-menu {
-  @include cssLock(
-    "margin-top",
-    360,
-    1920,
-    ($gutter_num * 10, $gutter_num * 20)
-  );
-  @include cssLock(
-    "margin-bottom",
-    360,
-    1920,
-    ($gutter_num * 3, $gutter_num * 10)
-  );
-
   z-index: 10;
+  margin-top: $gutter * 10;
+  margin-bottom: 0;
 
   & + & {
     @include cssLock(
@@ -49,11 +38,12 @@
   li {
     a {
       @extend .link;
+      @extend .link--small;
       @extend .link--normalize-font;
 
       text-transform: uppercase;
       opacity: 0.6;
-      letter-spacing: -0.1px;
+      letter-spacing: 2px;
       color: color(dark);
 
       @include cssLock(

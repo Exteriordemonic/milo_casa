@@ -2,9 +2,15 @@
   max-width: 100%;
   height: 100vh;
 
-  &__img {
+  &__carousel,
+  &__cell,
+  .flickity-viewport {
+    width: 100%;
+    height: 100vh !important;
+  }
+
+  &__image {
     @extend %image;
-    @extend %absolute;
   }
 
   &__sygnet {
@@ -12,5 +18,6 @@
 
     width: $gutter * 21;
     height: auto;
+    z-index: 100;
   }
 }

@@ -1,6 +1,6 @@
 .attribute {
-  width: $gutter * 3.5;
-  height: $gutter * 3.5;
+  width: $gutter * 3;
+  height: $gutter * 3;
   border-radius: 100%;
   background: transparent;
   padding: 0;
@@ -9,21 +9,8 @@
   position: relative;
   outline: 0;
 
-  &::after {
-    @extend %absolute;
-
-    content: "";
-    border: ($gutter * 0.3) solid color(special-dark);
-    z-index: 10;
-    border-radius: 100%;
-    opacity: 0;
-    transition: $transition;
-  }
-
   &.-is-active {
-    &::after {
-      opacity: 1;
-    }
+    transform: scale(1.4);
   }
 
   &__image {

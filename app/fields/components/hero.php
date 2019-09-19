@@ -7,7 +7,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $hero = new FieldsBuilder('hero');
 
 $hero
-    ->addImage('hero')
+    ->addGallery('hero')
     ->addImage('sygnet');
 ;
 return $hero;

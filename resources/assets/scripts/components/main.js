@@ -2,8 +2,6 @@
 // import external dependencies
 import 'jquery';
 
-require('@fancyapps/fancybox');
-
 // Import everything from autoload
 import './autoload/**/*';
 
@@ -64,7 +62,3 @@ setTimeout(() => {
   slider.resize();
   hero.resize();
 }, 300);
-
-$('a[data-fancybox]').fancybox({
-  animationEffect: 'zoom',
-});

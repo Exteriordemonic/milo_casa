@@ -255,6 +255,10 @@ function image($id, $size, $class) {
     return wp_get_attachment_image($id, $size, false, ['class'=>$class]);
 }
 
+function image_url($id, $size) {
+    return wp_get_attachment_image_src($id, $size)[0];
+}
+
 function woocommerce_cart_item_thumbnail() {
    echo 'hello';
 }

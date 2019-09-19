@@ -1,1 +1,28 @@
 @import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+
+.fancybox-bg {
+  opacity: 1 !important;
+  background: color(light) !important;
+}
+
+.fancybox-content {
+  .slider__cell {
+    position: unset !important;
+    margin: 0;
+  }
+}
+
+button.fancybox-button.fancybox-close-small {
+  position: fixed;
+  width: $gutter * 6;
+  height: $gutter * 6;
+}
+
+.fancybox-container {
+  opacity: 0;
+  transition: $transition;
+}
+
+.fancybox-is-open {
+  opacity: 1;
+}
