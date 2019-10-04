@@ -8,8 +8,14 @@
     @include('partials.sidebar')
     @include('partials.wishlist')
     @include('partials.mini-cart')
+    @include('partials.popup')
 
     <div class="wrap" role="document">
+      <div class="slide-text">
+        <marquee class="slide-text__text" behavior="scroll"  direction="right">
+          {!! option('sideText') !!}
+        </marquee>
+      </div>
       <div class="content">
         <main id="main" class="main" data-main>
           @yield('content')

@@ -2,7 +2,7 @@
   position: relative;
   color: color(dark);
 
-  .container {
+  & > .container {
     @include cssLock("padding", 360, 1920, ($gutter_num * 3, $gutter_num * 10));
     @include cssLock(
       "padding-top",

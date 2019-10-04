@@ -1,0 +1,13 @@
+.breadcrumb {
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 -$gutter * 3.5;
+    padding-left: $gutter * 7;
+  }
+
+  &__item {
+    padding: 0 $gutter * 3.5;
+    opacity: 0.7;
+  }
+}

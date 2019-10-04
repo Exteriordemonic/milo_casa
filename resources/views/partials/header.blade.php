@@ -2,7 +2,7 @@
   $logo = option('logo')['id'];
 @endphp
 
-<header class="header" header>
+<header class="header @if(!is_front_page()) header--reverse @endif" header data-header>
   <nav class="header__wrapper container">
     <div class="header__cell">
       @include('components.hamburger')

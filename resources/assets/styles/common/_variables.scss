@@ -36,13 +36,13 @@ $navbar-light-toggler-icon-bg: none;
 
 $z-index: (
   sidebar: 100,
-  popup: 50,
   sign-in-to-newsletter: 190,
   infobar: 200,
   header: 300,
   wishlist: 410,
   mini-cart: 310,
-  preloader: 400
+  popup: 420,
+  preloader: 500,
 );
 
 $dot-size: 15;

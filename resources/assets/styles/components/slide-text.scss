@@ -1,0 +1,28 @@
+.slide-text {
+  @extend .text;
+  @extend .normalize-font;
+
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: fixed;
+  left: $gutter * 2;
+  top: 100%;
+  bottom: 0;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+  z-index: 10;
+  width: 100vh;
+  height: $gutter * 5;
+  align-items: center;
+  display: none;
+
+  @include media(sm) {
+    display: flex;
+  }
+
+  &__text {
+    color: rgba(color(dark), 0.7);
+    width: auto;
+  }
+}

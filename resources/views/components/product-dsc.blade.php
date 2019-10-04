@@ -1,30 +1,4 @@
 @php
-  $userID = get_current_user_id();
-
-  if($userID) {
-    $wishlistProducts = get_field('product-list', 'user_' . $userID);
-    if ($wishlistProducts != '') {
-      $wishlistArray = explode(",",$wishlistProducts);
-
-      if(!in_array( get_the_ID() ,$wishlistArray) ) {
-
-        if(count($wishlistArray) > 18) {
-          array_shift($wishlistArray);
-          $wishlistProducts = implode( ",", $wishlistArray );
-        }
-        $wishlistProducts .=  get_the_ID() .',';
-      }
-    }
-
-    else {
-      $wishlistProducts = get_the_ID() .',';
-    }
-
-    update_field('product-list', $wishlistProducts ,'user_' . $userID);
-  }
-
-
-
   $_product = wc_get_product( get_the_ID() );
   $permalink = $_product -> get_permalink();
   $description = $_product -> get_description();

@@ -5,7 +5,7 @@
       <input class="search__input" type="text" name="s" placeholder="">
       <input type="hidden" name="post_type" value="product">
       <button class="search__button">
-        {{ __('SEARCH', 'MiloCasa') }}
+        {{ __('RECHERCHE', 'MiloCasa') }}
       </button>
     </form>
   </div>

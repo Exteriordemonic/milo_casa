@@ -1,7 +1,7 @@
 @php
   $title = option('wishlsit_title') ? option('wishlsit_title') : 'Wishlist';
-  $empty = option('wishlsit_empty') ? option('wishlsit_empty') : 'Your wishlist is empty';
-  $login = option('wishlsit_login') ? option('wishlsit_login') : 'You need to login to start create your Wishlist';
+  $empty = option('wishlsit_empty') ? option('wishlsit_empty') : 'Votre wishlist est vide';
+  $login = option('wishlsit_login') ? option('wishlsit_login') : 'Veuillez vous connecter à votre compte pour ajouter le produit à votre wishlist';
   $userID = get_current_user_id();
   $wishlistProducts = get_field('product-list', 'user_' . $userID);
   if ($wishlistProducts != '') {
@@ -10,7 +10,7 @@
 
 @endphp
 
-<section class="wishlist" data-wishlist>
+<section class="wishlist" data-wishlist id="wishlist">
   <div class="container">
     <h2 class="wishlist__title">
       {{ $title }}
@@ -41,7 +41,7 @@
       <p class="wishlist__dsc wishlist__dsc--login">
         {{ $login }}
         <a href="{{ get_permalink( get_option('woocommerce_myaccount_page_id') ) }}" class="button wishlist__login">
-          {{ __('Login', 'MiloCasa') }}
+          {{ __('Me connecter', 'MiloCasa') }}
         </a>
       </p>
       @endif

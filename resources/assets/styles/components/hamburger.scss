@@ -58,6 +58,10 @@
 
   &.-is-active {
     #{$root}__line {
+      @media (max-width: 567px) {
+        background-color: color(light) !important;
+      }
+
       &:nth-child(1) {
         animation: topBar-is-active $transition linear both;
       }

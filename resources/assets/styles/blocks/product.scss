@@ -30,12 +30,16 @@
     #{$root}__add {
       opacity: 1;
     }
+
+    #{$root}__wishlist {
+      opacity: 1;
+    }
   }
 
   &__footer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     flex-wrap: wrap;
   }
@@ -82,11 +86,43 @@
   }
 
   &__add {
-    @extend .button;
-    @extend .button--special-light;
+    @extend .button-underline;
+
+    font-size: $gutter*1.2;
 
     @include media(xs) {
       opacity: 0;
+    }
+  }
+
+  &__wishlist {
+    position: absolute;
+    top: $gutter;
+    right: $gutter * 4;
+    opacity: 0;
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.6 !important;
+    }
+
+    span {
+      @extend %absolute;
+
+      font-size: $gutter * 3;
+
+      &:nth-child(2) {
+        opacity: 0;
+        transition: $transition;
+      }
+    }
+
+    &.-is-active {
+      span {
+        &:nth-child(2) {
+          opacity: 1;
+        }
+      }
     }
   }
 }

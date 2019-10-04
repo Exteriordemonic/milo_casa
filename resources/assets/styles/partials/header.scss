@@ -1,11 +1,12 @@
 .header {
+  $root: &;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: z-index("header");
   width: 100%;
   padding: ($gutter * 3) 0;
-  background: linear-gradient(rgba(color(dark), 1), rgba(color(dark), 0));
 
   &__wrapper {
     display: flex;
@@ -32,6 +33,10 @@
       margin: 0 auto;
       justify-content: center;
       align-items: center;
+      height: $gutter * 13;
+      max-width: $gutter * 20;
+      top: -$gutter * 3;
+      padding: $gutter * 2 $gutter * 4;
     }
   }
 
@@ -69,6 +74,17 @@
       @include media(xs) {
         display: flex;
       }
+    }
+  }
+
+  &--reverse {
+    .additional-links__icon,
+    .social-icons__icon {
+      filter: invert(0);
+    }
+
+    .hamburger__line {
+      background: color(dark);
     }
   }
 }

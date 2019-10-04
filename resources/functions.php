@@ -354,3 +354,34 @@ function custom_post_type() {
         return str_replace("<br/>","<br clear='none'/>", $content);
     }
     add_filter('the_content','clear_br');
+
+
+    // ADD to wishlist
+    $userID = get_current_user_id();
+
+if($userID && $_GET['wish_id']) {
+    // get  current wishlist
+    $wishlistProducts = get_field('product-list', 'user_' . $userID);
+
+    // get ID of product need to add
+    $wish_ID = $_GET['wish_id'];
+
+    if ($wishlistProducts != '') {
+        $wishlistArray = explode(",",$wishlistProducts);
+
+        if(!in_array( $wish_ID ,$wishlistArray) ) {
+            $wishlistProducts .=  $wish_ID .',';
+        }
+
+        else {
+            $result = array_diff($wishlistArray, array($wish_ID));
+            $wishlistProducts = join(",", $result);
+        }
+    }
+
+    else {
+        $wishlistProducts = $wish_ID .',';
+    }
+
+    update_field('product-list', $wishlistProducts ,'user_' . $userID);
+}

@@ -48,21 +48,27 @@
   }
 
   &__list {
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     grid-gap: $gutter * 3;
-    margin: ($gutter * 5) 0;
-    max-height: calc(100vh - #{$gutter * 20});
-    padding: 0;
-    overflow-y: auto;
+    width: 100%;
+    margin-bottom: $gutter * 10 !important;
+    padding-left: 0;
+    max-height: 90vh;
+    overflow: auto;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
 
     @include media(xs) {
       grid-template-columns: 1fr 1fr 1fr;
     }
-  }
 
-  &__elem {
-    height: $gutter * 24;
+    @include media(xs) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }

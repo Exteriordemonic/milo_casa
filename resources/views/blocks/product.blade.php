@@ -25,10 +25,26 @@ if ($_product) {
   $add = $_product -> add_to_cart_url();
 }
 
+$userID = get_current_user_id();
+
+if($userID) {
+  // get  current wishlist
+  $wishlistProducts = get_field('product-list', 'user_' . $userID);
+  $wishlistArray = explode(",",$wishlistProducts);
+  if(in_array( $id ,$wishlistArray)) {
+    $inWishlist = true;
+  }
+
+  else {
+    $inWishlist = false;
+  }
+}
+
 @endphp
 
 @if ($_product)
 <div class="product -is-hover">
+
   <a href="{{ $permalink ? $permalink : '/' }}" class="product__img-wrapper">
     {!! image($img, 'full', 'product__img') !!}
   </a>
@@ -42,8 +58,12 @@ if ($_product) {
       </p>
     </a>
     <a href="{{ $add }}" class="product__add">
-      {{ _e('Add to card', 'MiloCasa') }}
+      {{ _e('AJOUTER AU PANIER', 'MiloCasa') }}
     </a>
   </div>
+  <a href="?wish_id={{ $id }}" class="product__wishlist @if($inWishlist) -is-active @endif" data-wishlist-trigger>
+    <span class="far fa-heart"></span>
+    <span class="fas fa-heart"></span>
+  </a>
 </div>
 @endif

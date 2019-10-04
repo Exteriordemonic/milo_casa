@@ -13,7 +13,7 @@ const HERO = {
     if (this.carousel) {
       this.slider = new Flickity(CAROUSEL, {
         // options
-        pageDots: false,
+        pageDots: true,
         autoPlay: 4000,
         prevNextButtons: false,
         wrapAround: true,

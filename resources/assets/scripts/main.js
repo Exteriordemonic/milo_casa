@@ -27,6 +27,8 @@ import search from './components/search';
 import miniCart from './components/mini-cart';
 import addToCart from './components/add-to-cart';
 import removeFromCart from './components/remove-from-cart';
+import header from './components/header';
+import popup from './components/popup';
 
 
 /** Populate Router instance with DOM routes */
@@ -53,6 +55,8 @@ jQuery(document).ready(() => {
   miniCart.init();
   addToCart.init();
   removeFromCart.init();
+  header.init();
+  popup.init();
 });
 
 setTimeout(() => {

@@ -6,11 +6,11 @@
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: $gutter*3;
+    grid-gap: $gutter*10;
     padding-right: $gutter * 3;
 
     @include media(md) {
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: 3fr 2fr;
     }
   }
 
