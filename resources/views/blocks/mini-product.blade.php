@@ -57,7 +57,7 @@
       </span>
     </h3>
     <p class="mini-product__price text">
-      {{ $product['quantity'] }} x <span data-price>{{ $_product->get_price() }}</span>
+      {{ $product['quantity'] }} x <span data-price>{!! $_product->get_price_html() !!}</span>
     </p>
   </a>
   <a href="{{ wc_get_cart_remove_url( $product['key'] ) }}" class="mini-product__remove" remove-from-cart>

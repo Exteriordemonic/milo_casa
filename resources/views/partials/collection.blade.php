@@ -1,5 +1,6 @@
 @php
   $flex = get_field('flex');
+  $queried_object = get_queried_object();
 @endphp
 
 @if ($flex)

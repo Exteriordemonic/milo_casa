@@ -68,6 +68,11 @@
     @extend %absolute;
 
     top: unset;
+    bottom: $gutter * 5;
+
+    @include media(sm) {
+      bottom: 0;
+    }
   }
 
   &__empty {
