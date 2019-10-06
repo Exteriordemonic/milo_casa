@@ -1,13 +1,45 @@
 .breadcrumb {
   &__list {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     margin: 0 -$gutter * 3.5;
     padding-left: $gutter * 7;
+    text-transform: lowercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -$gutter;
+      left: 0;
+      height: 1px;
+      background: black;
+      width: 100%;
+      max-width: $gutter * 50;
+    }
   }
 
   &__item {
-    padding: 0 $gutter * 3.5;
+    padding: 0 $gutter * 3.5/2;
     opacity: 0.7;
+
+    &::after {
+      content: url(../../images/right-arrow.png);
+      background-size: 40px;
+      padding-left: $gutter * 3.5;
+    }
+
+    &:last-child {
+      opacity: 1;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    a {
+      @extend .link;
+      @extend .normalize-font;
+    }
   }
 }
