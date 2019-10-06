@@ -19,5 +19,20 @@
     margin-top: $gutter;
     display: block;
     letter-spacing: 1px;
+
+    &[data-is-show="true"] img {
+      transform: translateX($gutter * 2) translateY($gutter/2) rotate(-90deg);
+    }
+  }
+
+  &__toggle-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX($gutter * 2) translateY($gutter/2) rotate(90deg);
+    height: $gutter * 2;
+    width: auto;
+    transition: $transition;
   }
 }

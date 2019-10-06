@@ -29,13 +29,11 @@ const moreContent = {
         elem.slideToggle();
 
         if (isShow == 'false') {
-          $this.innerText = $this.dataset.textShow;
           $this.dataset.isShow = 'true';
           console.log('show');
         }
 
         else {
-          $this.innerText = $this.dataset.text;
           $this.dataset.isShow = 'false';
           console.log('hide');
         }

@@ -1,11 +1,14 @@
 .breadcrumb {
   &__list {
     position: relative;
-    display: flex;
     justify-content: flex-start;
-    margin: 0 -$gutter * 3.5;
     padding-left: $gutter * 7;
-    text-transform: lowercase;
+    text-transform: uppercase;
+    display: none;
+
+    @include media(sm) {
+      display: flex;
+    }
 
     &::before {
       content: "";
@@ -16,6 +19,12 @@
       background: black;
       width: 100%;
       max-width: $gutter * 50;
+    }
+
+    &--noborder {
+      &::before {
+        display: none;
+      }
     }
   }
 

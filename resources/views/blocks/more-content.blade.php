@@ -13,10 +13,11 @@
   <button
     class="more-content__button"
     data-text="{{ _e('AFFICHER PLUS', 'MiloCasa') }}"
-    data-text-show="{{ _e('AFFICHER MINUS', 'MiloCasa') }}"
+    data-text-show="{{ _e('AFFICHER PLUS', 'MiloCasa') }}"
     data-show-more-button={{ $id }}
     data-is-show="false"
     >
     {{ _e('AFFICHER PLUS', 'MiloCasa') }}
+    <img src="@asset("images/right-arrow.png")" alt="toggle content" class="more-content__toggle-img">
   </button>
 </div>
