@@ -43,30 +43,28 @@
     }
   }
 
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   &__cell {
     display: grid;
 
     &--20-80 {
-      grid-template-columns: 20% 80%;
+      @include media(sm) {
+        grid-template-columns: 20% 80%;
+      }
 
       .wp-block-image {
         position: relative;
         height: 100%;
-
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          max-height: 100%;
-          width: auto;
-          margin: 0 auto;
-        }
       }
     }
 
     p {
       @include cssLock("font-size", 360, 1920, (10, 14));
+      @include cssLock("margin-bottom", 360, 1920, ($gutter_num*2, $gutter_num*4));
 
       line-height: 3;
       font-weight: 500;
