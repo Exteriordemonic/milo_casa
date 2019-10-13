@@ -33,7 +33,7 @@
     opacity: 0.7;
 
     &::after {
-      content: url(../../images/right-arrow.png);
+      content: url(../images/right-arrow.png);
       padding-left: $gutter * 3.5;
     }
 

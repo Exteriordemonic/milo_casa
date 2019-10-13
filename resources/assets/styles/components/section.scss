@@ -10,15 +10,19 @@
   &__title {
     @extend .headline;
 
+    @include cssLock("font-size", 360, 1920, (24, 56));
+
+    font-family: map-get($font-family, "special"), serif;
     width: 100%;
-    color: color(greyy);
+    color: lighten(color(greyy), 30%);
     text-align: center;
     position: relative;
+    letter-spacing: $gutter * 0.5;
 
     @include media(sm) {
       width: fit-content;
       padding-left: $gutter * 15;
-      padding-right: $gutter;
+      padding-right: $gutter / 2;
       text-align: end;
       display: inline-block;
     }
@@ -37,5 +41,40 @@
         display: initial;
       }
     }
+  }
+
+  &__cell {
+    display: grid;
+
+    &--20-80 {
+      grid-template-columns: 20% 80%;
+
+      .wp-block-image {
+        position: relative;
+        height: 100%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          max-height: 100%;
+          width: auto;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    p {
+      @include cssLock("font-size", 360, 1920, (10, 14));
+
+      line-height: 3;
+      font-weight: 500;
+    }
+  }
+
+  // RESET
+  .wp-block-image {
+    margin: 0;
   }
 }

@@ -10,7 +10,8 @@ $page
     ->setLocation('post_type', '==', 'page')
         ->and('page_template', '!=', 'views/page-collection.blade.php')
         ->and('page_template', '!=', 'views/page-content.blade.php')
-        ->and('page_template', '!=', 'views/page-insipration.blade.php');
+        ->and('page_template', '!=', 'views/page-insipration.blade.php')
+        ->and('page_template', '!=', 'views/page-about.blade.php');
 
 $page
     ->addTab('Hero', ['placement' => 'left'])
