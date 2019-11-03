@@ -12,6 +12,7 @@ $page
 $page
     ->addTab('Main setting', ['label' => 'Main setting', 'placement' => 'left'])
         ->addTaxonomy('main_cat', ['taxonomy'=>'product_cat', 'add_term'=>'0',])
+        ->addFile('pdf', ['label'=> 'PDF'])
     ->addTab('Colors', ['label' => 'Colors', 'placement' => 'left'])
         ->addRepeater('product-colors')
             ->addTaxonomy('color', ['taxonomy'=>'pa_color', 'add_term'=>'0',])

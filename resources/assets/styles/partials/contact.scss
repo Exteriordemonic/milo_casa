@@ -2,6 +2,14 @@
   position: relative;
   color: color(dark);
 
+  &::before {
+    @extend %absolute;
+
+    content: "";
+    background: linear-gradient(to right, color(light) 40%, rgba(color(light), 0.2));
+    z-index: -1;
+  }
+
   & > .container {
     @include cssLock("padding", 360, 1920, ($gutter_num * 3, $gutter_num * 10));
     @include cssLock(
@@ -16,14 +24,6 @@
       1920,
       ($gutter_num * 6, $gutter_num * 24)
     );
-
-    &::before {
-      @extend %absolute;
-
-      content: "";
-      background: linear-gradient(to right, color(light) 40%, rgba(color(light), 0.2));
-      z-index: -1;
-    }
 
     @media (max-width: 767px) {
       width: 100%;

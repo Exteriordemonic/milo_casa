@@ -11,5 +11,32 @@
 
   &__elem {
     padding: 0 ($gutter * 1);
+
+    &--size {
+      display: none;
+
+      &.-is-active {
+        display: initial;
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: block;
+    display: none;
+
+    &.-is-active {
+      display: block;
+    }
+  }
+
+  &__title {
+    @extend .subtitle;
+
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    margin-top: $gutter * 2;
   }
 }

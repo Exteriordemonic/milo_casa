@@ -26,4 +26,10 @@
 
     margin-bottom: $gutter * 5;
   }
+
+  &__pdf {
+    @extend .button-underline;
+
+    margin-top: $gutter * 5;
+  }
 }

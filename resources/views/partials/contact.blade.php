@@ -6,8 +6,8 @@
 @endphp
 
 <section class="contact">
+  {!! image($contact__img, 'full', 'contact__bg') !!}
   <div class="container">
-    {!! image($contact__img, 'full', 'contact__bg') !!}
     <div class="contact__wrapper">
       <h2 class="contact__title">
         {!! $contact__title !!}

@@ -35,8 +35,9 @@
   //get name
   $name =  substr(strstr($_variation -> get_name()," "), 1);
 
-@endphp
+  $price = wc_price($product['data']->price);
 
+@endphp
 <div class="mini-product">
   <a href="{{ get_permalink($_product->get_id()) }}">
     {!! image($_product->get_image_id(), 'full', 'mini-product__image') !!}
@@ -57,7 +58,7 @@
       </span>
     </h3>
     <p class="mini-product__price text">
-      {{ $product['quantity'] }} x <span data-price>{!! $_product->get_price_html() !!}</span>
+      {{ $product['quantity'] }} x <span data-price>{!! $price !!}</span>
     </p>
   </a>
   <a href="{{ wc_get_cart_remove_url( $product['key'] ) }}" class="mini-product__remove" remove-from-cart>

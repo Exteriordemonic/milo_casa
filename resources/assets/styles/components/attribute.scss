@@ -18,4 +18,15 @@
 
     border-radius: 100%;
   }
+
+  &--size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border: 1px solid;
+    width: auto;
+    min-width: $gutter * 3;
+    padding: 0 $gutter * 0.5;
+  }
 }

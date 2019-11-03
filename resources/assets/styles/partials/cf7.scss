@@ -1,0 +1,69 @@
+.wpcf7-form {
+  @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+  @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+  &-control-wrap {
+    width: 100%;
+    display: block;
+  }
+
+  &-control {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      (gutter_num(0.5), gutter_num(1))
+    );
+    @include cssLock(
+      "padding-top",
+      360,
+      1920,
+      (gutter_num(0.5), gutter_num(1))
+    );
+
+    @extend .text;
+
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+
+  .wpcf7-submit {
+    @extend .button;
+
+    font-size: $gutter * 1.2;
+    border-bottom: 0;
+    margin: 0 auto;
+  }
+
+  .wpcf7-response-output {
+    @extend .text;
+
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      (gutter_num(0.5), gutter_num(1))
+    );
+    @include cssLock(
+      "padding-top",
+      360,
+      1920,
+      (gutter_num(0.5), gutter_num(1))
+    );
+
+    border: 0;
+    text-align: center;
+  }
+}

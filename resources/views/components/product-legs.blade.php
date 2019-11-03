@@ -5,6 +5,9 @@
 @endphp
 
 @if($pa_leg)
+<h3 class="attributes__title">
+  Pieds
+</h3>
 <ul class="attributes">
   <li class="attributes__elem">
     @php

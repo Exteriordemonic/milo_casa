@@ -6,6 +6,7 @@
   $price = $_product -> get_price_html();
   $add = $_product -> add_to_cart_url();
   $available_variations = $_product->get_available_variations();
+  $pdf = get_field('pdf');
 
 
   // Get product category
@@ -38,4 +39,9 @@
   </a>
 
   @include('blocks.more-content' , ['description'=>$description])
+  @if ($pdf)
+  <a href="{{ $pdf['url'] }}" class="product-dsc__pdf" data-fancybox="files">
+    {!! _e('TÉLÉCHARGER <br>LA NOTICE DE MONTAGE', 'MiloCasa') !!}
+  </a>
+  @endif
 </div>
