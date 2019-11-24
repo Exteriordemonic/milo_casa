@@ -9,6 +9,15 @@
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-
+  <style> .attribute--size { 
+	  background: transparent !important;
+	  border: 0 !important;
+      padding: 0 !important; 
+	  }
+	  .attributes__elem--size .attribute.-is-active {
+		transform: none;
+		  border-bottom: 1px solid !important;
+	}
+</style>
   @php wp_head() @endphp
 </head>

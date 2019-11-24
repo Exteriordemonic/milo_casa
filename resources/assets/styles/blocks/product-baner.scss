@@ -1,0 +1,39 @@
+.product-baner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 30vh;
+  gap: gutter(3);
+
+  &--1-2 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &--2-1 {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &--1-1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+
+  &::after,
+  &::before {
+    display: none !important;
+  }
+
+  &__link {
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  &__image {
+    @extend %image;
+  }
+}

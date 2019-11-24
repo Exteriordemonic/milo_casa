@@ -14,4 +14,10 @@
   @include media(xs) {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  &__elem {
+    &--baner {
+      grid-column: span 3;
+    }
+  }
 }

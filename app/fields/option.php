@@ -12,6 +12,7 @@ $option
 $option
     ->addTab('Main setting', ['label' => 'Main setting', 'placement' => 'left'])
         ->addImage('logo', ['title' => 'Logo'])
+        ->addImage('logo_int', ['title' => 'Logo Interiors'])
         ->addText('footer_link', ['title' => 'Footer link txt'])
         ->addText('sideText',  ['title' => 'Side text'])
     ->addTab('Popup', ['label' => 'Popup', 'placement' => 'left'])
@@ -44,6 +45,15 @@ $option
             ->addImage('image', ['title' => 'Icon'])
             ->addLink('link', ['title' => 'link'])
             ->addTextarea('title', [ 'new_lines'=>'br'])
+        ->endRepeater()
+    ->addTab('Milo_Interiros', ['label' => 'Milo Interiros', 'placement' => 'left'])
+        ->addRepeater('interiors_gallery', ['min' => 0, 'layout' => 'table'])
+            ->addSelect('style')
+                ->addChoice('1-2')
+                ->addChoice('2-1')
+                ->addChoice('1')
+                ->addChoice('1-1')
+            ->addGallery('gallery')
         ->endRepeater()
     ;
 return $option;
