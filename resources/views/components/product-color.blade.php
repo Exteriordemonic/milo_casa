@@ -85,6 +85,3 @@
     </ul>
   </div>
 @endif
-
-C:\wamp64\www\milo_casa\wp-content\themes\milo_casa\
-/milo-casa/wp-content/themes/milo_casa

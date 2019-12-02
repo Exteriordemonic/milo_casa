@@ -1,7 +1,7 @@
 @php
   $arrayDSC = explode("<!--more-->", $description);
   $show = $arrayDSC[0];
-  $hide = $arrayDSC[1];
+  $hide = $arrayDSC[1] ? $arrayDSC[1] : '';
   $id = rand();
 @endphp
 
