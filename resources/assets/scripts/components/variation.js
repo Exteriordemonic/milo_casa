@@ -7,12 +7,14 @@ const CONFIG = {
   ADD_TO_CART: 'data-add-to-cart-variations',
   SLIDER: 'data-variation-slide',
   ATTR_WRAPPER: 'data-attr-wrapper',
+  DSC: 'data-more',
+  DSC_MORE: 'data-show-more',
   CLASS: '-is-active',
 }
 
 const variation = {
   init() {
-    const { TRIGGER, PRICE, SIZE, ADD_TO_CART, SLIDER, ATTR_WRAPPER, CLASS } = CONFIG;
+    const { TRIGGER, PRICE, SIZE, ADD_TO_CART, SLIDER, ATTR_WRAPPER, DSC, DSC_MORE, CLASS } = CONFIG;
 
     // Label elements
     this.trigger = document.querySelectorAll(`[${TRIGGER}]`);
@@ -21,11 +23,13 @@ const variation = {
     this.addToCart = document.querySelector(`[${ADD_TO_CART}]`);
     this.slider = document.querySelectorAll(`[${SLIDER}]`);
     this.attrWrapper = document.querySelector(`[${ATTR_WRAPPER}]`);
+    this.dsc = document.querySelector(`[${DSC}]`);
+    this.dscMore = document.querySelector(`[${DSC_MORE}]`);
 
     // store data
     this.class = CLASS;
 
-    if(this.trigger.length) {
+    if (this.trigger.length) {
       this.addEvent();
     }
   },
@@ -36,16 +40,17 @@ const variation = {
         const $this = event.currentTarget;
 
         // label data
-        const price =  $this.dataset.price;
-        const id    =  $this.dataset.variationId;
-        const size  =  $this.dataset.variationSize;
-        const sizeChange  =  $this.dataset.size;
-        const color =  $this.getAttribute('title');
+        const price = $this.dataset.price;
+        const id = $this.dataset.variationId;
+        const size = $this.dataset.variationSize;
+        const sizeChange = $this.dataset.size;
+        const color = $this.getAttribute('title');
+        const dsc = $this.dataset.dsc;
 
         if (!sizeChange) {
-         // RESET ACTIVE CLASS
-         this.trigger.forEach(element => {
-          element.classList.remove(this.class);
+          // RESET ACTIVE CLASS
+          this.trigger.forEach(element => {
+            element.classList.remove(this.class);
           });
         }
         // Add class for current button
@@ -55,6 +60,7 @@ const variation = {
         this.changePrice(price);
         this.changeAddToCart(id);
         this.changeSlider(color);
+        this.changeDsc(dsc);
 
         if (size) {
           this.showSizes(color, size)
@@ -74,6 +80,18 @@ const variation = {
     this.price.innerHTML = price;
   },
 
+  changeDsc(dsc) {
+    if(dsc) {
+
+      const dscArray = dsc.split('<!-- more -->');
+      const show = dscArray[0];
+      const hide = dscArray[1];
+
+      this.dsc.innerHTML = show;
+      this.dscMore.innerHTML = hide;
+    }
+  },
+
   changeAddToCart(id) {
     const link = window.location.href + `?add-to-cart=${id}`;
     this.addToCart.setAttribute('href', link);
@@ -83,7 +101,7 @@ const variation = {
     // RESET ACTIVE CLASS
     let active = false;
     this.slider.forEach(element => {
-      if(element.dataset.variationSlide == color) {
+      if (element.dataset.variationSlide == color) {
         element.classList.add(this.class);
         active = true;
       }
@@ -93,7 +111,7 @@ const variation = {
       }
     })
 
-    if(!active) {
+    if (!active) {
       this.slider[0].classList.add(this.class);
     }
 
@@ -105,7 +123,7 @@ const variation = {
 
     console.log(this.triggerSize);
     this.triggerSize.forEach(element => {
-      if(element.dataset.color == color) {
+      if (element.dataset.color == color) {
         element.classList.add(this.class);
         element.parentNode.classList.add(this.class);
       }
@@ -115,7 +133,7 @@ const variation = {
         element.parentNode.classList.remove(this.class);
       }
 
-      if(element.dataset.size == size) {
+      if (element.dataset.size == size) {
         element.classList.add(this.class);
       }
 

@@ -6,7 +6,9 @@
 @endphp
 
 <div class="more-content">
-  {!! $show !!}
+  <div data-more>
+    {!! $show !!}
+  </div>
   <div class="more-content__more" data-show-more={{ $id }}>
     {!! $hide !!}
   </div>

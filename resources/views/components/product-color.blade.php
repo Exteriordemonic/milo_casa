@@ -18,6 +18,7 @@
       $pa_color = get_term_by( 'slug', $color['attributes']['attribute_pa_color'], 'pa_color');
       $colorImg = get_field('color_image', 'pa_color_'.$pa_color->term_id)[ID];
       $colorHex = get_field('color_hex', 'pa_color_'.$pa_color->term_id);
+      $dsc = $color['variation_description'] ? $color['variation_description'] : $_product -> get_description();
     @endphp
     <a
       class="attribute"
@@ -25,6 +26,7 @@
       title={{ $color['attributes']['attribute_pa_color'] }}
       data-color={{ $color['attributes']['attribute_pa_color'] }}
       data-price='{{ $color['price_html'] ? $color['price_html'] : $_product->get_price_html() }}'
+      data-dsc="{{ $dsc }}"
       @if ($color['attributes']['attribute_pa_size'])
       data-variation-size="{{ $color['attributes']['attribute_pa_size'] }}"
       @else
@@ -55,6 +57,9 @@
     <ul class="attributes">
       @foreach ($colors as $color)
       @if ($color['attributes']['attribute_pa_size'])
+      @php
+        $dsc = $color['variation_description'] ? $color['variation_description'] : $_product -> get_description();
+      @endphp
       <li class="attributes__elem attributes__elem--size">
         <a
           class="attribute attribute--size"
@@ -62,6 +67,7 @@
           title={{ $color['attributes']['attribute_pa_color'] }}
           data-color={{ $color['attributes']['attribute_pa_color'] }}
           data-price='{{ $color['price_html'] ? $color['price_html'] : $_product->get_price_html() }}'
+          data-dsc="{{ $dsc }}"
           @if ($color['attributes']['attribute_pa_size'])
           data-size="{{ $color['attributes']['attribute_pa_size'] }}"
           @endif
@@ -79,3 +85,6 @@
     </ul>
   </div>
 @endif
+
+C:\wamp64\www\milo_casa\wp-content\themes\milo_casa\
+/milo-casa/wp-content/themes/milo_casa

@@ -1,23 +1,35 @@
 .product-baner {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 30vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   gap: gutter(3);
 
+  @include media(xs) {
+    grid-template-rows: 30vh;
+  }
+
   &--1-2 {
-    grid-template-columns: 1fr 2fr;
+    @include media(xs) {
+      grid-template-columns: 1fr 2fr;
+    }
   }
 
   &--2-1 {
-    grid-template-columns: 2fr 1fr;
+    @include media(xs) {
+      grid-template-columns: 2fr 1fr;
+    }
   }
 
   &--1-1 {
-    grid-template-columns: 1fr 1fr;
+    @include media(xs) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &--1 {
-    grid-template-columns: 1fr;
+    @include media(xs) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &::after,
