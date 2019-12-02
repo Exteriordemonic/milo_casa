@@ -17,7 +17,9 @@
 
   &__elem {
     &--baner {
-      grid-column: span 3;
+      @include media(xs) {
+        grid-column: span 3;
+      }
     }
   }
 }
