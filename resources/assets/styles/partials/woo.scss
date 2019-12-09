@@ -261,4 +261,9 @@
   .woocommerce-form__input-checkbox {
     height: auto !important;
   }
+
+  .woocommerce-form-coupon-toggle {
+    opacity: 0;
+    pointer-events: none;
+  }
 }

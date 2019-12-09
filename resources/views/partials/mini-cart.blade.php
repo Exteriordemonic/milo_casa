@@ -22,7 +22,7 @@
     </ul>
   @else
   <p class="mini-cart__empty">
-    {{ __('Your cart is empnty', 'MiloCasa') }}
+    {{ __('Votre panier est vide', 'MiloCasa') }}
   </p>
   @endif
 

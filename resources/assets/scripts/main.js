@@ -29,6 +29,7 @@ import addToCart from './components/add-to-cart';
 import removeFromCart from './components/remove-from-cart';
 import header from './components/header';
 import popup from './components/popup';
+import cupon from './components/cupon';
 
 
 /** Populate Router instance with DOM routes */
@@ -57,6 +58,7 @@ jQuery(document).ready(() => {
   removeFromCart.init();
   header.init();
   popup.init();
+  cupon.init();
 });
 
 setTimeout(() => {
