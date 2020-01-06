@@ -48,7 +48,7 @@
     </li>
     @if ($familly)
     <li class="breadcrumb__item">
-      <a href="{{ get_home_url()}}/{{ $familly->slug }}">
+      <a href="{{ get_home_url()}}/categories/{{ $familly->slug }}">
         {{ $familly->name }}
       </a>
     </li>

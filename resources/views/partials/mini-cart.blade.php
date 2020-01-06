@@ -32,9 +32,11 @@
         <span class="text bold">
           {{ __('Total:', 'MiloCasa') }}
         </span>
+
         <span class="mini-cart__price text" data-price>
-          {{ WC()->cart->get_subtotal() }}
+          € {{ WC()->cart->get_subtotal() }}
         </span>
+
       </div>
     </footer>
     <a class="mini-cart__checkout title bold" href="{{ $woocommerce->cart->get_checkout_url() }}">

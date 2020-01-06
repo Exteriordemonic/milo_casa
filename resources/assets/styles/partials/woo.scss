@@ -267,3 +267,17 @@
     pointer-events: none;
   }
 }
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  border-top-color: color(special) !important;
+
+  &::before {
+    color: color(special) !important;
+  }
+}
+
+form.checkout_coupon.woocommerce-form-coupon {
+  display: block !important;
+}

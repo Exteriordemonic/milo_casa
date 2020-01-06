@@ -26,6 +26,7 @@
     top: $gutter * 0.5;
     position: initial;
     margin: 0;
+    background-color: rgba(color(light), 0.8);
 
     @include media(xs) {
       position: absolute;

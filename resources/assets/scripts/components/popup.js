@@ -14,7 +14,7 @@ const header = {
     this.trigger = document.querySelector(`[${TRIGGER}]`);
     this.class = CLASS;
 
-    if (!getCookie('popup')) {
+    if (!getCookie('popup') && this.elem) {
       this.addEvents();
     }
   },
