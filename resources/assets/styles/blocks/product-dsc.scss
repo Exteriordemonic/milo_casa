@@ -4,7 +4,7 @@
   z-index: 10;
 
   @include media(md) {
-    padding: ($gutter * 6) ($gutter * 10);
+    padding: ($gutter * 6) ($gutter * 3) ($gutter * 6) ($gutter * 10);
   }
 
   &__title {

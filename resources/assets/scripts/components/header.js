@@ -13,6 +13,8 @@ const header = {
     if (document.querySelector('body').classList.contains('home')) {
       this.addEvents();
     }
+
+    this.addScroll();
   },
 
   addEvents() {
@@ -30,6 +32,34 @@ const header = {
         }
       }
     })
+  },
+
+  addScroll() {
+    let s = 0;
+
+    window.addEventListener('scroll', () => {
+      console.log('scrolling');
+      const ls = window.pageYOffset;
+
+
+      if (ls > s) {
+        this.elem.classList.add('header--hide');
+      }
+
+      else {
+        this.elem.classList.remove('header--hide');
+      }
+
+      if (ls > 200) {
+        this.elem.classList.add('header--bg');
+      }
+
+      else {
+        this.elem.classList.remove('header--bg');
+      }
+
+      s = window.pageYOffset;
+    });
   },
 }
 

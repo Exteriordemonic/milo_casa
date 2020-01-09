@@ -7,6 +7,7 @@
   z-index: z-index("header");
   width: 100%;
   padding: ($gutter * 3) 0;
+  transition: $transition;
 
   &__wrapper {
     display: flex;
@@ -26,7 +27,7 @@
     top: $gutter * 0.5;
     position: initial;
     margin: 0;
-    background-color: rgba(color(light), 0.8);
+    transition: $transition;
 
     @include media(xs) {
       position: absolute;
@@ -90,6 +91,33 @@
 
     .hamburger__line {
       background: color(dark);
+    }
+  }
+
+  &--hide {
+    top: -100%;
+  }
+
+  &--bg {
+    @include media(xs) {
+      background-color: color(light);
+
+      .additional-links__icon,
+      .social-icons__icon {
+        filter: invert(0);
+      }
+
+      .search__input {
+        filter: invert(1);
+      }
+
+      .hamburger__line {
+        background: color(dark);
+      }
+
+      #{$root}__brand-wrapper {
+        height: gutter(9);
+      }
     }
   }
 }

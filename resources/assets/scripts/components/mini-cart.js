@@ -9,12 +9,12 @@ const CONFIG = {
 
 const miniCart = {
   init() {
-    const {ELEM, OPEN, CLOSE, CLASS } = CONFIG;
+    const { ELEM, OPEN, CLOSE, CLASS } = CONFIG;
 
     // label data
     this.elem = document.querySelector(ELEM);
     this.open = document.querySelectorAll(OPEN);
-    this.close = document.querySelector(CLOSE);
+    this.close = document.querySelectorAll(CLOSE);
 
     this.class = CLASS;
 
@@ -30,9 +30,11 @@ const miniCart = {
       });
     });
 
-    this.close.addEventListener('click', e => {
-      e.preventDefault();
-      this.hide();
+    this.close.forEach(element => {
+      element.addEventListener('click', e => {
+        e.preventDefault();
+        this.hide();
+      });
     });
   },
 

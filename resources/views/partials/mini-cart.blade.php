@@ -39,12 +39,15 @@
 
       </div>
     </footer>
-    <a class="mini-cart__checkout title bold" href="{{ $woocommerce->cart->get_checkout_url() }}">
+    <a class="mini-cart__to-card text" href="{{ $woocommerce->cart->get_checkout_url() }}">
       {{ __('Terminer ma commande', 'MiloCasa') }}
     </a>
     <a class="mini-cart__to-card text" href="{{ wc_get_cart_url() }}">
         {{ __('Voir mon panier', 'MiloCasa') }}
     </a>
+    <button class="mini-cart__to-card mini-cart__to-card--last text" data-close-mini-cart>
+      {{ __('Continuer mes achats', 'MiloCasa') }}
+    </button>
   </div>
 </div>
 
